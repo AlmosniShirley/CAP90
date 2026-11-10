@@ -531,6 +531,12 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
 @media (max-width: 860px) { .deliv.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .deliv.three { grid-template-columns: 1fr; } }
 
+/* Relais: Alerte-style blocks */
+.relais .card, .relais .frame, .relais .deliv li, .relais .outcome { background: var(--bg); }
+.relais-format-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: clamp(32px, 4vw, 44px); }
+.relais .frame .btn { justify-self: start; margin-top: 6px; }
+.relais .prev-limits { margin-bottom: 0; }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -835,64 +841,57 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
         <p>CAP90 Relais prolonge l'espace de confiance avec un interlocuteur externe, neutre et expérimenté. La personne accompagnée peut prendre du recul sur sa situation, tandis que l'entreprise bénéficie d'une lecture régulière des signaux qui méritent d'être traités.</p>
         <p>L'objectif n'est pas de surveiller la relation de travail ni de décider à la place du manager. Il s'agit de faire émerger les sujets suffisamment tôt pour qu'ils puissent encore être traités.</p>
       </div>
-      <div class="relais-block">
-        <h3>Pour qui&nbsp;?</h3>
-        <p class="card-intro">Cette offre peut être pertinente lorsque&nbsp;:</p>
-        <ul class="brief-list">
-          <li>La personne occupe un poste clé ou difficile à remplacer</li>
-          <li>Le manager souhaite disposer d'un regard externe sans créer une nouvelle fonction RH</li>
-          <li>L'entreprise traverse une phase de croissance, de transformation ou de réorganisation</li>
-          <li>Le poste ou les responsabilités continuent d'évoluer après l'arrivée</li>
-          <li>Les signaux faibles sont difficiles à faire remonter en interne</li>
-          <li>L'entreprise veut maintenir un espace de recul sans attendre qu'une situation devienne critique</li>
-        </ul>
+      <div class="prev-sub">
+        <span class="eyebrow">Pour qui&nbsp;?</span>
+        <h3 class="sub-h">Quand un regard externe reste utile après J90</h3>
       </div>
-      <div class="relais-block">
-        <h3>Ce que comprend CAP90 Relais</h3>
-        <ul class="brief-list">
-          <li>Un entretien confidentiel régulier avec la personne accompagnée</li>
-          <li>Un espace pour prendre du recul sur le poste, les priorités, les relations de travail et les évolutions de l'environnement</li>
-          <li>L'identification des irritants, tensions ou écarts qui nécessitent une attention</li>
-          <li>Une remontée synthétique et non nominative des tendances importantes</li>
-          <li>Une alerte lorsque la situation nécessite un arbitrage ou une décision</li>
-          <li>Un point de suivi avec le sponsor défini au démarrage</li>
-          <li>Des recommandations concrètes lorsque des ajustements sont nécessaires</li>
-        </ul>
+      <ul class="signs"><li>La personne occupe un poste clé ou difficile à remplacer.</li><li>Le manager souhaite disposer d'un regard externe sans créer une nouvelle fonction RH.</li><li>L'entreprise traverse une phase de croissance, de transformation ou de réorganisation.</li><li>Le poste ou les responsabilités continuent d'évoluer après l'arrivée.</li><li>Les signaux faibles sont difficiles à faire remonter en interne.</li><li>L'entreprise veut maintenir un espace de recul sans attendre qu'une situation devienne critique.</li></ul>
+
+      <div class="prev-sub">
+        <span class="eyebrow">Ce que comprend CAP90 Relais</span>
+        <h3 class="sub-h">Un tiers de confiance, avec un cadre clair</h3>
       </div>
-      <div class="relais-block relais-two">
-        <div class="format-box">
-          <span class="tag-inline">Format à valider</span>
-          <h3>Format recommandé&nbsp;: 3 mois, renouvelable</h3>
-          <ul class="brief-list one-col">
-            <li>1 entretien confidentiel mensuel avec la personne accompagnée</li>
-            <li>1 point de synthèse avec le sponsor de l'accompagnement</li>
-            <li>Une alerte ponctuelle si un sujet important nécessite une décision</li>
-            <li>Une synthèse de fin de période avec les points d'attention et les recommandations</li>
-          </ul>
+      <ul class="deliv"><li>Un entretien confidentiel régulier avec la personne accompagnée</li><li>Un espace pour prendre du recul sur le poste, les priorités, les relations de travail et l'environnement</li><li>L'identification des irritants, tensions ou écarts qui nécessitent une attention</li><li>Une remontée synthétique et non nominative des tendances importantes</li><li>Une alerte lorsque la situation nécessite un arbitrage ou une décision</li><li>Un point de suivi avec le sponsor défini au démarrage</li><li>Des recommandations concrètes lorsque des ajustements sont nécessaires</li></ul>
+
+      <div class="outcomes-head relais-format-head">
+        <h3>Format recommandé&nbsp;: 3 mois, renouvelable</h3>
+        <span class="tag-inline">Format à valider</span>
+      </div>
+      <div class="outcomes">
+        <div class="outcome"><b>1 entretien par mois</b><span>Confidentiel, avec la personne accompagnée.</span></div>
+        <div class="outcome"><b>1 point de synthèse</b><span>Avec le sponsor de l'accompagnement.</span></div>
+        <div class="outcome"><b>Une alerte ponctuelle</b><span>Si un sujet important nécessite une décision.</span></div>
+        <div class="outcome"><b>Une synthèse finale</b><span>Points d'attention et recommandations en fin de période.</span></div>
+      </div>
+
+      <div class="prev-sub">
+        <span class="eyebrow">Confidentialité</span>
+        <h3 class="sub-h">Un cadre de confidentialité explicite</h3>
+      </div>
+      <div class="conf-grid">
+        <div class="card">
+          <h3>Ce que l'entreprise reçoit</h3>
+          <ul class="checks"><li>Les tendances</li><li>Les risques</li><li>Les sujets qui nécessitent une action ou un arbitrage</li></ul>
         </div>
-        <div class="conf-text">
-          <h3>Un cadre de confidentialité explicite</h3>
-          <p>Les échanges individuels restent confidentiels. Aucun verbatim n'est transmis à l'entreprise.</p>
-          <p>Nous partageons uniquement les tendances, les risques et les sujets qui nécessitent une action ou un arbitrage.</p>
-          <p>Les règles de remontée d'information, les personnes destinataires et les situations pouvant donner lieu à une alerte sont définies avant le démarrage.</p>
+        <div class="card">
+          <h3>Ce qui reste confidentiel</h3>
+          <ul class="nots"><li>Les échanges individuels</li><li>Aucun verbatim n'est transmis à l'entreprise</li></ul>
+          <p class="card-intro">Les règles de remontée d'information, les personnes destinataires et les situations pouvant donner lieu à une alerte sont définies avant le démarrage.</p>
         </div>
       </div>
-      <div class="relais-limits">
-        <div>
-          <h3>Ce que CAP90 Relais ne remplace pas</h3>
-          <ul class="nots two-col">
-            <li>Le rôle du manager</li>
-            <li>Les décisions de l'entreprise</li>
-            <li>Les échanges directs entre la personne et son équipe</li>
-            <li>La fonction RH</li>
-            <li>Un accompagnement juridique</li>
-            <li>Une médiation formelle</li>
-            <li>Un suivi thérapeutique ou médical</li>
-          </ul>
+
+      <div class="limits-grid prev-limits">
+        <div class="card">
+          <span class="eyebrow">Ce que CAP90 Relais ne remplace pas</span>
+          <ul class="nots"><li>Le rôle du manager</li><li>Les décisions de l'entreprise</li><li>Les échanges directs entre la personne et son équipe</li><li>La fonction RH</li><li>Un accompagnement juridique</li><li>Une médiation formelle</li><li>Un suivi thérapeutique ou médical</li></ul>
         </div>
-        <p class="role">Nous ne sommes pas là pour maintenir artificiellement une situation. Nous sommes là pour rendre les évolutions, les irritants et les décisions nécessaires plus visibles.</p>
+        <div class="frame">
+          <span class="eyebrow">Notre position</span>
+          <h2 class="frame-title">Nous ne sommes pas là pour maintenir artificiellement une situation.</h2>
+          <p class="card-intro">Nous sommes là pour rendre les évolutions, les irritants et les décisions nécessaires plus visibles.</p>
+          <a class="btn btn-ghost" data-mail="relais" href="#contact">Prolonger l'espace de confiance <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
-      <a class="btn btn-ghost" data-mail="relais" href="#contact">Prolonger l'espace de confiance <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
 
