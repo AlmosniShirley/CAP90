@@ -337,15 +337,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 @media (max-width: 520px) { .hide-sm { display: none; } }
 
 /* Key facts under the hero */
-.facts { margin: clamp(36px, 5vw, 52px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.facts { margin: clamp(36px, 5vw, 52px) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
 .fact { padding: 18px 20px 0 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .fact + .fact { padding-left: 20px; border-left: 1px solid var(--line); }
 .fact dt { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .fact dd { margin: 0; font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 600; font-size: 18px; line-height: 1.3; }
 .ph-inline { color: var(--orange); font-family: ui-monospace, Menlo, monospace; font-size: 0.8em; font-weight: 600; letter-spacing: 0; }
 @media (max-width: 860px) {
-  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
-  .fact:nth-child(3) { padding-left: 0; border-left: 0; }
+  .facts { grid-template-columns: 1fr; }
+  .fact, .fact + .fact { padding: 16px 0 0; border-left: 0; }
 }
 @media (max-width: 480px) {
   .facts { grid-template-columns: 1fr; }
@@ -455,7 +455,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#situations">Situations</a>
       <a href="#alerte">Le diagnostic</a>
       <a href="#livrables">Livrables</a>
-      <a href="#tarifs">Tarifs</a>
       <a href="#prevention">Prévention</a>
       <a href="#nous">Qui sommes-nous</a>
     </nav>
@@ -479,7 +478,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="fact"><dt>Pour qui</dt><dd>Dirigeants, managers et RH d'ESN et de scale-ups</dd></div>
         <div class="fact"><dt>Quand nous appeler</dt><dd>Pendant une période d'essai qui inquiète, avant de trancher</dd></div>
         <div class="fact"><dt>Durée</dt><dd>7 à 10 jours, restitution comprise</dd></div>
-        <div class="fact"><dt>Prix</dt><dd>À partir de <span class="ph-inline">[TARIF À RENSEIGNER]</span>&nbsp;€&nbsp;HT</dd></div>
       </dl>
     </div>
   </section>
@@ -611,45 +609,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section id="tarifs" class="offer">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Tarifs</span>
-        <h2>Un prix pour un résultat cadré, pas pour du temps passé</h2>
-        <p class="lede">Le prix dépend du nombre d'interlocuteurs, de la complexité de la situation et du niveau de suivi nécessaire. Le périmètre, les livrables et le prix sont validés avant le démarrage.</p>
-      </div>
-      <div class="tiers">
-        <div class="tier">
-          <span class="tier-name">Diagnostic</span>
-          <span class="price">À partir de <span class="ph-inline">[TARIF À RENSEIGNER]</span>&nbsp;€&nbsp;HT</span>
-          <p>Analyse et restitution, en 7 à 10 jours.</p>
-          <ul class="checks"><li>Cadrage, entretiens et analyse</li><li>Livrables complets</li><li>Échange de restitution avec les décideurs</li></ul>
-        </div>
-        <div class="tier main">
-          <span class="tier-name">Diagnostic + remise sur les rails</span>
-          <span class="price">À partir de <span class="ph-inline">[TARIF À RENSEIGNER]</span>&nbsp;€&nbsp;HT</span>
-          <p>Analyse, plan d'action et suivi sur 30 jours.</p>
-          <ul class="checks"><li>Tout le diagnostic</li><li>Mise en œuvre du plan d'action sur 30 jours</li><li>Points de suivi avec le manager et la personne recrutée</li></ul>
-        </div>
-      </div>
-      <p class="tier-note">Pas de prix horaire. Le devis est envoyé après un premier échange de 30 minutes, sans engagement.</p>
-    </div>
-  </section>
-
   <section id="preuves">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Exemples</span>
-        <h2>À quoi ressemble un diagnostic</h2>
+        <span class="eyebrow">Repères</span>
+        <h2>Quelques repères publics</h2>
       </div>
-      <div class="ph-grid">
-        <div class="ph"><b>[AJOUTER ICI UN CAS CLIENT OU UN EXEMPLE ANONYMISÉ]</b><span>Situation de départ, ce que le diagnostic a montré, décision prise.</span></div>
-        <div class="ph"><b>[AJOUTER ICI UN EXEMPLE DE SITUATION ANALYSÉE]</b><span>Les écarts identifiés entre poste promis et poste vécu.</span></div>
-        <div class="ph"><b>[AJOUTER ICI UN TÉMOIGNAGE]</b><span>Dirigeant, manager ou RH, avec son accord.</span></div>
-        <div class="ph"><b>[AJOUTER ICI UN EXTRAIT ANONYMISÉ DE LIVRABLE]</b><span>Par exemple une page de la cartographie des écarts.</span></div>
-        <div class="ph"><b>[AJOUTER ICI UN INDICATEUR DE RÉSULTAT]</b><span>Uniquement un chiffre mesuré sur vos missions.</span></div>
-      </div>
-      <div class="refs-head"><h3>Quelques repères publics</h3></div>
       <div class="refs">
         <div class="stat">
           <span class="num">12,7&nbsp;%</span>
