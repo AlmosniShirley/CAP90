@@ -496,6 +496,17 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
 @media (max-width: 860px) { .relais-two { grid-template-columns: 1fr; } }
 .relais .brief-list { font-size: 16px; }
 
+/* Prevention stages */
+.sub-h { font-size: clamp(24px, 2.8vw, 30px) !important; }
+.stages { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; margin-top: 8px; }
+.stage { display: grid; gap: 10px; align-content: start; padding-top: 18px; border-top: 2px solid var(--ink); min-width: 0; }
+.stage .phase { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.stage-title { font-size: 21px; }
+.livrable { margin-top: 4px; font-size: 15px; line-height: 1.5; padding: 12px 14px; border-radius: 10px; background: var(--bg); }
+.livrable b { color: var(--teal); }
+.prevention .format-box p { font-size: 16px; line-height: 1.55; }
+@media (max-width: 860px) { .stages { grid-template-columns: 1fr; } }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -694,23 +705,104 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
   <section id="prevention" class="prevention">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Autre situation</span>
+        <span class="eyebrow">Offre préventive · Le recrutement est signé</span>
         <h2>CAP90 Prévention · Préparer les 90 premiers jours</h2>
-        <p class="lede">Pour les entreprises qui viennent de recruter un profil clé et veulent éviter qu'une prise de poste mal préparée ne se transforme en difficulté quelques semaines plus tard.</p>
+        <p class="accroche">Il est encore temps de bien démarrer.</p>
       </div>
-      <div class="prev-grid">
-        <div>
-          <ul class="brief-list">
-            <li>Audit du poste</li>
-            <li>Clarification des attentes</li>
-            <li>Préparation du matériel et des accès</li>
-            <li>Préparation des premières rencontres</li>
-            <li>Suivi à J15, J30, J60 et J90</li>
-            <li>Détection des écarts et des irritants</li>
-          </ul>
-          <a class="btn btn-ghost prev-cta" data-mail="prevention" href="#contact">Préparer une prise de poste <span class="arrow" aria-hidden="true">→</span></a>
+      <div class="relais-intro">
+        <p>Pour les entreprises qui viennent de recruter un profil clé et qui veulent structurer sa prise de poste avant que les incompréhensions, les irritants ou les écarts ne deviennent une situation de crise.</p>
+        <p>CAP90 Prévention ne garantit pas la réussite d'un recrutement. Elle permet de rendre les attentes, les moyens, les interlocuteurs et les critères de réussite suffisamment clairs pour donner à la personne les meilleures conditions possibles de prise de poste.</p>
+      </div>
+      <div class="relais-block relais-two">
+        <div class="conf-text">
+          <h3>Le problème</h3>
+          <p>Un recrutement peut être réussi sur le papier et pourtant mal démarrer.</p>
+          <p>Le poste a parfois été présenté trop largement, les objectifs restent flous, le manager manque de temps, les accès ne sont pas prêts ou la personne ne sait pas clairement ce qui est attendu d'elle dans les premières semaines.</p>
+          <p>Ces écarts sont rarement dramatiques au premier jour. Ils deviennent problématiques lorsqu'ils ne sont pas nommés et traités.</p>
+        </div>
+        <div class="format-box">
+          <h3>La réponse</h3>
+          <p class="card-intro">CAP90 Prévention organise les 90 premiers jours autour de trois objectifs&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Aligner la promesse faite pendant le recrutement avec la réalité du poste</li><li>Préparer concrètement l'arrivée et les premières interactions</li><li>Détecter rapidement les écarts avant qu'ils ne deviennent une rupture de confiance</li></ul>
+          <p>Nous ne remplaçons ni le manager ni la RH. Nous tenons le fil entre les personnes, les attentes et les décisions à prendre.</p>
         </div>
       </div>
+      <div class="relais-block">
+        <h3 class="sub-h">Le déroulé CAP90 Prévention</h3>
+      </div>
+      <div class="stages">
+        <div class="stage">
+          <span class="phase">Avant l'arrivée</span>
+          <h3 class="stage-title">Clarifier le poste</h3>
+          <p class="card-intro">Nous auditons le poste avec l'entreprise et le manager&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Pourquoi le poste existe</li><li>Ce que la personne doit réellement accomplir</li><li>Ce qui est prioritaire dans les 30, 60 et 90 premiers jours</li><li>Les objectifs et critères de réussite</li><li>Les moyens réellement disponibles</li><li>Les interlocuteurs clés</li><li>Les zones de décision</li><li>Les contraintes ou évolutions prévisibles</li><li>Les éventuels écarts entre le poste présenté et le poste réellement disponible</li></ul>
+          <p class="livrable"><b>Livrable&nbsp;:</b> Une synthèse de prise de poste avec les priorités, les attentes, les interlocuteurs, les moyens et les points de vigilance.</p>
+        </div>
+        <div class="stage">
+          <span class="phase">Avant J0</span>
+          <h3 class="stage-title">Préparer l'arrivée</h3>
+          <p class="card-intro">Nous vérifions avec l'entreprise que les conditions de démarrage sont réunies&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Matériel, accès et outils</li><li>Informations utiles</li><li>Agenda des premiers jours</li><li>Présentation aux interlocuteurs clés</li><li>Disponibilité du manager</li><li>Premières réunions</li><li>Feuille de route des premières semaines</li></ul>
+          <p class="livrable"><b>Livrable&nbsp;:</b> Un plan d'arrivée concret et partagé avec les personnes concernées.</p>
+        </div>
+        <div class="stage">
+          <span class="phase">J0 à J15</span>
+          <h3 class="stage-title">Vérifier la réalité du démarrage</h3>
+          <p class="card-intro">Nous recueillons les premiers retours de la personne recrutée et du manager&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Ce qui est conforme à ce qui avait été annoncé</li><li>Ce qui reste flou</li><li>Les premiers obstacles</li><li>Les informations manquantes</li><li>Les relations ou interfaces à faciliter</li><li>Les décisions qui ne peuvent pas attendre</li></ul>
+          <p class="livrable"><b>Livrable&nbsp;:</b> Un point de situation avec les premiers ajustements à effectuer.</p>
+        </div>
+        <div class="stage">
+          <span class="phase">J30</span>
+          <h3 class="stage-title">Mesurer les premiers écarts</h3>
+          <p class="card-intro">Nous vérifions&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Si les priorités sont comprises</li><li>Si les premiers objectifs sont réalistes</li><li>Si les moyens sont cohérents avec les attentes</li><li>Si la personne peut réellement avancer</li><li>Si le manager est suffisamment disponible</li><li>Si le poste correspond à ce qui avait été présenté</li><li>Si des irritants risquent de s'installer</li></ul>
+          <p class="livrable"><b>Livrable&nbsp;:</b> Une synthèse des écarts et un plan d'action priorisé.</p>
+        </div>
+        <div class="stage">
+          <span class="phase">J60</span>
+          <h3 class="stage-title">Ajuster avant que la situation ne se tende</h3>
+          <p class="card-intro">Nous faisons le point sur&nbsp;:</p>
+          <ul class="brief-list one-col"><li>La montée en autonomie</li><li>Les blocages persistants</li><li>Les arbitrages nécessaires</li><li>L'évolution éventuelle du poste</li><li>La qualité des interactions</li><li>Les attentes qui doivent être reformulées</li><li>Les signaux faibles à suivre</li></ul>
+          <p class="livrable"><b>Livrable&nbsp;:</b> Une revue de situation avec recommandations d'ajustement.</p>
+        </div>
+        <div class="stage">
+          <span class="phase">J90</span>
+          <h3 class="stage-title">Faire le bilan et décider de la suite</h3>
+          <p class="card-intro">Nous faisons le bilan de la prise de poste&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Ce qui a été réalisé</li><li>Ce qui reste à construire</li><li>Les écarts entre les attentes initiales et la réalité</li><li>Les conditions de réussite pour la suite</li><li>Les points de vigilance</li><li>Les décisions à prendre pour la suite de la collaboration</li></ul>
+          <p class="livrable"><b>Livrable&nbsp;:</b> Un bilan de prise de poste et une feuille de route pour les prochains mois.</p>
+        </div>
+      </div>
+      <div class="relais-block relais-two">
+        <div class="conf-text">
+          <h3>Un espace de confiance pour la personne recrutée</h3>
+          <p>La personne dispose d'un espace externe et confidentiel pour prendre du recul sur ce qu'elle vit pendant ses premières semaines&nbsp;:</p>
+          <ul class="brief-list"><li>Compréhension du poste</li><li>Relation avec le manager</li><li>Priorités</li><li>Charge de travail</li><li>Fonctionnement de l'équipe</li><li>Écarts entre la promesse et la réalité</li><li>Difficultés qu'elle n'ose pas encore formuler en interne</li></ul>
+          <p>Nous ne transmettons pas de verbatim. Nous faisons remonter les tendances, les risques et les sujets nécessitant une action, selon les règles définies au démarrage.</p>
+          <p>L'objectif n'est pas de contourner le manager. C'est de permettre aux sujets importants d'être formulés assez tôt pour pouvoir être traités.</p>
+        </div>
+        <div class="conf-text">
+          <h3>Ce que l'entreprise reçoit</h3>
+          <p>Selon le périmètre choisi&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Une synthèse d'audit du poste</li><li>Une feuille de route des 30, 60 et 90 premiers jours</li><li>Une checklist opérationnelle d'arrivée</li><li>Une cartographie des interlocuteurs et interfaces</li><li>Des points de situation à J15, J30, J60 et J90</li><li>Une synthèse des écarts entre attentes et réalité</li><li>Des recommandations d'ajustement</li><li>Un bilan de prise de poste</li><li>Une feuille de route pour la suite</li></ul>
+          <p>Pas de checklist décorative&nbsp;: chaque point doit permettre une action, un arbitrage ou une décision.</p>
+        </div>
+      </div>
+      <div class="relais-block relais-two">
+        <div class="format-box">
+          <h3>Format</h3>
+          <p>CAP90 Prévention est un forfait de 90 jours à compter de la préparation de l'arrivée. Il comprend&nbsp;:</p>
+          <ul class="brief-list one-col"><li>Un cadrage initial avec l'entreprise</li><li>Un audit du poste</li><li>Une préparation de l'arrivée</li><li>Des points de suivi à J15, J30, J60 et J90</li><li>Des échanges confidentiels avec la personne recrutée</li><li>Des alertes sur les sujets nécessitant un arbitrage</li><li>Un bilan final</li></ul>
+          <p>Le nombre d'entretiens, les interlocuteurs concernés, les livrables et le prix sont définis avant le démarrage. Pas de tarif horaire.</p>
+        </div>
+        <div class="conf-text">
+          <h3>Ce que CAP90 Prévention ne fait pas</h3>
+          <ul class="nots"><li>Nous ne prenons pas la place du manager.</li><li>Nous ne remplaçons pas la RH.</li><li>Nous ne décidons pas des objectifs à la place de l'entreprise.</li><li>Nous ne pouvons pas compenser un poste mal conçu ou des moyens inexistants.</li><li>Nous ne garantissons pas que la personne restera dans l'entreprise.</li><li>Nous ne transmettons pas automatiquement les propos individuels.</li><li>Nous ne transformons pas les points de suivi en reporting permanent sur la personne recrutée.</li></ul>
+          <p class="role">L'entreprise reste responsable de ses décisions, de son management et des moyens donnés à la personne pour réussir.</p>
+        </div>
+      </div>
+      <a class="btn btn-ghost prev-cta" data-mail="prevention" href="#contact">Préparer l'arrivée d'un profil clé <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -797,19 +889,19 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
         <a class="offer-card alert" href="#alerte">
           <span class="when-label">Période d'essai qui dérape</span>
           <b>CAP90 Alerte</b>
-          <span class="desc">Un diagnostic en 7 à 10 jours pour comprendre ce qui bloque et décider de la suite.</span>
+          <span class="desc">Comprendre ce qui bloque et décider de la suite, en 7 à 10 jours.</span>
           <span class="go">Voir le diagnostic <span aria-hidden="true">→</span></span>
         </a>
         <a class="offer-card prev" href="#prevention">
-          <span class="when-label">Arrivée prochaine</span>
+          <span class="when-label">Arrivée prochaine ou récente</span>
           <b>CAP90 Prévention</b>
-          <span class="desc">La préparation de l'arrivée et un suivi à J15, J30, J60 et J90.</span>
+          <span class="desc">Préparer et suivre les 90 premiers jours.</span>
           <span class="go">Voir la prévention <span aria-hidden="true">→</span></span>
         </a>
         <a class="offer-card relais-card" href="#relais">
           <span class="when-label">Après J90</span>
           <b>CAP90 Relais</b>
-          <span class="desc">Un tiers de confiance, avec une fréquence définie et des règles de confidentialité explicites.</span>
+          <span class="desc">Maintenir un espace de confiance dans la durée.</span>
           <span class="go">Voir le relais <span aria-hidden="true">→</span></span>
         </a>
       </div>
@@ -883,7 +975,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
   const MAILS = {
     alerte: mail("Période d'essai à clarifier", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate d'arrivée :\nProblème observé :\nUrgence éventuelle :\n"),
     relais: mail("Échange sur CAP90 Relais", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate de prise de poste :\nDurée souhaitée :\nRaison de la demande :\nPersonne qui serait accompagnée :\nInterlocuteur côté entreprise :\n"),
-    prevention: mail("Préparer une prise de poste", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\nCe que vous voulez préparer :\n")
+    prevention: mail("Préparer l'arrivée d'un profil clé", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\nNombre de personnes impliquées :\nPrincipales préoccupations :\nInterlocuteur côté entreprise :\n")
   };
   document.querySelectorAll("[data-mail]").forEach(a => { a.href = MAILS[a.dataset.mail]; });
 </script>
