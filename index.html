@@ -281,6 +281,14 @@ header.site .btn { padding: 11px 18px; font-size: 15px; }
 .sos-q { font-weight: 600; font-size: 15px; color: var(--ink); }
 .sos-line { font-size: 15px; color: var(--muted); }
 .sos-kw { display: block; font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 800; font-size: 24px; letter-spacing: 0.02em; color: var(--orange); user-select: all; }
+.kw-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+a.copy { text-decoration: none; display: inline-flex; align-items: center; }
+.copy.send { background: var(--teal); border-color: var(--teal); color: #fff; }
+.copy.send:hover { border-color: var(--teal); background: color-mix(in srgb, var(--teal) 85%, #000); }
+.copy.sos-send { background: var(--orange); border-color: var(--orange); }
+.copy.sos-send:hover { border-color: var(--orange); background: color-mix(in srgb, var(--orange) 85%, #000); }
+.cta-mail { margin-top: 14px; font-size: 15px; color: var(--muted); }
+.cta-mail .addr { color: var(--ink); font-weight: 600; user-select: all; overflow-wrap: anywhere; }
 .keyword-card.ready { border-style: solid; border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
 
 footer { padding-block: 32px 48px; color: var(--muted); font-size: 14px; }
@@ -547,6 +555,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <h2 style="margin-top:14px">Vous vous êtes dit oui. Faisons en sorte que ça dure.</h2>
           <p class="lede">Personne n'a envie d'entendre «&nbsp;tout est fini entre nous&nbsp;» à la fin de la période d'essai. On en parle 30 minutes, avant le premier jour.</p>
           <div class="cta-meta"><span>30 minutes</span><span>Sans engagement (pour l'instant)</span><span>Confidentiel</span></div>
+          <p class="cta-mail">Ou écrivez-nous directement à <span class="addr">shirley.chiche@buildrh.co</span></p>
         </div>
         <div class="cta-actions">
           <div class="match" role="group" aria-labelledby="match-title">
@@ -560,13 +569,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="keyword-card" id="kw-card">
             <span class="label">Écrivez-nous le mot-clé</span>
             <span class="keyword" id="kw">PAS DE RUPTURE</span>
-            <button class="copy" id="copy-kw" type="button">Copier le mot-clé</button>
+            <div class="kw-actions"><a class="copy send" id="send-kw" href="#contact">Envoyer par e-mail</a><button class="copy" id="copy-kw" type="button">Copier le mot-clé</button></div>
           </div>
           <a class="btn btn-primary" id="cta-main" href="#contact">Réserver mon échange de cadrage <span class="arrow" aria-hidden="true">→</span></a>
           <div class="sos">
             <span class="sos-q">Déjà en période d'essai et ça tangue&nbsp;?</span>
             <span class="sos-line">Écrivez-nous <span class="sos-kw" id="kw-sos">SOS PÉRIODE D'ESSAI</span></span>
-            <button class="copy" id="copy-sos" type="button">Copier</button>
+            <div class="kw-actions"><a class="copy send sos-send" id="send-sos" href="#contact">Envoyer par e-mail</a><button class="copy" id="copy-sos" type="button">Copier</button></div>
           </div>
         </div>
       </div>
@@ -582,9 +591,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </footer>
 
 <script>
-  // Remplacez par votre lien de prise de rendez-vous (Calendly, Google Agenda…)
-  const BOOKING_URL = "";
-  if (BOOKING_URL) document.querySelectorAll('a[href="#contact"]').forEach(a => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; });
+  // Contact : destinataire principal et copie
+  const TO = "shirley.chiche@buildrh.co", CC = "coralie@ellipse.cn.com";
+  const mail = (subject, body) => "mailto:" + TO + "?cc=" + encodeURIComponent(CC) + "&subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  const fields = "\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\n\nMerci !";
+  document.querySelectorAll('a[href="#contact"]').forEach(a => { a.href = mail("Échange de cadrage Cap 90", "Bonjour Shirley et Coralie,\n\nJe souhaite planifier un échange de cadrage de 30 minutes." + fields); });
+  document.getElementById("send-kw").href = mail("PAS DE RUPTURE", "Bonjour Shirley et Coralie,\n\nPAS DE RUPTURE : nous préparons l'arrivée d'un profil clé et souhaitons en parler 30 minutes." + fields);
+  document.getElementById("send-sos").href = mail("SOS PÉRIODE D'ESSAI", "Bonjour Shirley et Coralie,\n\nSOS PÉRIODE D'ESSAI : une personne recrutée est en période d'essai et la situation nous inquiète." + fields);
 
   const boxes = [...document.querySelectorAll(".match input")];
   const bar = document.getElementById("meter-bar"), res = document.getElementById("match-result"), card = document.getElementById("kw-card");

@@ -4,12 +4,10 @@ Site vitrine de l'offre Cap 90 : sécuriser les 90 premiers jours des profils cl
 
 Page unique et statique (`index.html`), sans dépendance à installer. Publiée avec GitHub Pages.
 
-## Brancher le bouton de réservation
+## Contact
 
-Dans `index.html`, en bas du fichier, renseigner le lien de prise de rendez-vous :
+Les boutons « Réserver » et « Envoyer par e-mail » ouvrent un e-mail pré-rempli. L'adresse principale et la copie se règlent en bas de `index.html` :
 
 ```js
-const BOOKING_URL = "https://calendly.com/…";
+const TO = "…", CC = "…";
 ```
-
-Tous les boutons « Réserver » pointeront alors vers ce lien.
