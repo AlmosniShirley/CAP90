@@ -291,6 +291,23 @@ a.copy { text-decoration: none; display: inline-flex; align-items: center; }
 .cta-mail .addr { color: var(--ink); font-weight: 600; user-select: all; overflow-wrap: anywhere; }
 .keyword-card.ready { border-style: solid; border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
 
+/* Values */
+.values { padding-block: 0 clamp(56px, 7vw, 88px); }
+.values .eyebrow { display: block; margin-bottom: 18px; }
+.values-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.value { padding: 22px 22px 0 0; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.value + .value { padding-left: 22px; border-left: 1px solid var(--line); }
+.value h3 { font-size: 22px; }
+.value p { font-size: 15px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 860px) {
+  .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 22px; }
+  .value:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .value, .value + .value { padding: 18px 0 0; border-left: 0; }
+}
+
 footer { padding-block: 32px 48px; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 
@@ -578,6 +595,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <div class="kw-actions"><a class="copy send sos-send" id="send-sos" href="#contact">Envoyer par e-mail</a><button class="copy" id="copy-sos" type="button">Copier</button></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section id="valeurs" class="values">
+    <div class="wrap">
+      <span class="eyebrow">Nos valeurs</span>
+      <div class="values-grid">
+        <div class="value"><h3>Transparence</h3><p>Périmètre, prix et livrables posés avant de commencer. Ce que nous voyons, nous le disons.</p></div>
+        <div class="value"><h3>Performance</h3><p>Un profil clé autonome plus vite, et des décisions prises au bon moment.</p></div>
+        <div class="value"><h3>Corporate hacking</h3><p>Nous trouvons les raccourcis qui font avancer, là où les process ralentissent.</p></div>
+        <div class="value"><h3>Zéro bullshit</h3><p>Pas de checklist décorative ni de jargon. Des points de décision et des actions.</p></div>
       </div>
     </div>
   </section>
