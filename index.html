@@ -459,6 +459,30 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .anchor-alias { display: block; height: 0; }
 section[id], .anchor-alias { scroll-margin-top: 72px; }
 
+/* CAP90 Relais (extension) */
+.relais .eyebrow { color: var(--muted); }
+.accroche { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 700; font-size: clamp(21px, 2.5vw, 27px); line-height: 1.25; color: var(--teal); }
+.relais-intro { display: grid; gap: 14px; max-width: 68ch; color: var(--muted); }
+.relais-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: clamp(28px, 4vw, 40px); }
+.relais-grid .card p { font-size: 16px; line-height: 1.55; }
+.card-intro { color: var(--muted); }
+.brief-list.one-col { grid-template-columns: 1fr; }
+.card.format { background: var(--teal-soft); border-color: transparent; }
+.tag-inline { justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); border: 1.5px dashed var(--orange); border-radius: 999px; padding: 4px 10px; }
+.format-price { font-size: 15px; color: var(--muted); padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--teal) 25%, transparent); }
+.relais-limits { margin: clamp(28px, 4vw, 40px) 0 28px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px 48px; align-items: end; }
+.relais-limits h3 { margin-bottom: 16px; }
+.nots.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+@media (max-width: 860px) {
+  .relais-grid, .relais-limits { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) { .nots.two-col { grid-template-columns: 1fr; } }
+.offers2 { grid-template-columns: 1.3fr 1fr 1fr; }
+.offer-card.alert { box-shadow: 0 0 0 5px var(--orange-soft); }
+.offer-card.relais-card b { color: var(--ink); font-size: clamp(22px, 2.4vw, 28px); }
+.offer-card.relais-card:hover { border-color: var(--ink); }
+@media (max-width: 960px) { .offers2 { grid-template-columns: 1fr; } }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -677,10 +701,84 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
     </div>
   </section>
 
+  <section id="relais" class="relais">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Extension facultative · Après J90</span>
+        <h2>CAP90 Relais · Un tiers de confiance dans la durée</h2>
+        <p class="accroche">Les risques ne s'arrêtent pas toujours au jour 90.</p>
+      </div>
+      <div class="relais-intro">
+        <p>Une prise de poste peut être réussie tout en laissant apparaître, quelques mois plus tard, des tensions, des incompréhensions ou des écarts qui n'osent pas encore être formulés.</p>
+        <p>CAP90 Relais prolonge l'espace de confiance avec un interlocuteur externe, neutre et expérimenté. La personne accompagnée peut prendre du recul sur sa situation, tandis que l'entreprise bénéficie d'une lecture régulière des signaux qui méritent d'être traités.</p>
+        <p>L'objectif n'est pas de surveiller la relation de travail ni de décider à la place du manager. Il s'agit de faire émerger les sujets suffisamment tôt pour qu'ils puissent encore être traités.</p>
+      </div>
+      <div class="relais-grid">
+        <div class="card">
+          <h3>Pour qui&nbsp;?</h3>
+          <p class="card-intro">Cette offre peut être pertinente lorsque&nbsp;:</p>
+          <ul class="brief-list one-col">
+            <li>la personne occupe un poste clé ou difficile à remplacer&nbsp;;</li>
+            <li>le manager souhaite disposer d'un regard externe sans créer une nouvelle fonction RH&nbsp;;</li>
+            <li>l'entreprise traverse une phase de croissance, de transformation ou de réorganisation&nbsp;;</li>
+            <li>le poste ou les responsabilités continuent d'évoluer après l'arrivée&nbsp;;</li>
+            <li>les signaux faibles sont difficiles à faire remonter en interne&nbsp;;</li>
+            <li>l'entreprise veut maintenir un espace de recul sans attendre qu'une situation devienne critique.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Ce que comprend CAP90 Relais</h3>
+          <ul class="brief-list one-col">
+            <li>Un entretien confidentiel régulier avec la personne accompagnée</li>
+            <li>Un espace pour prendre du recul sur le poste, les priorités, les relations de travail et les évolutions de l'environnement</li>
+            <li>L'identification des irritants, tensions ou écarts qui nécessitent une attention</li>
+            <li>Une remontée synthétique et non nominative des tendances importantes</li>
+            <li>Une alerte lorsque la situation nécessite un arbitrage ou une décision</li>
+            <li>Un point de suivi avec le sponsor défini au démarrage</li>
+            <li>Des recommandations concrètes lorsque des ajustements sont nécessaires</li>
+          </ul>
+        </div>
+        <div class="card format">
+          <span class="tag-inline">Format à valider</span>
+          <h3>Format recommandé&nbsp;: accompagnement de 3 mois, renouvelable</h3>
+          <ul class="checks">
+            <li>1 entretien confidentiel mensuel avec la personne accompagnée</li>
+            <li>1 point de synthèse avec le sponsor de l'accompagnement</li>
+            <li>Une alerte ponctuelle si un sujet important nécessite une décision</li>
+            <li>Une synthèse de fin de période avec les points d'attention et les recommandations</li>
+          </ul>
+          <p class="format-price"><span class="ph-inline">[PRIX CAP90 RELAIS À RENSEIGNER]</span> · forfait mensuel ou forfait de 3 mois, pas de tarif horaire</p>
+        </div>
+        <div class="card">
+          <h3>Un cadre de confidentialité explicite</h3>
+          <p>Les échanges individuels restent confidentiels. Aucun verbatim n'est transmis à l'entreprise.</p>
+          <p>Nous partageons uniquement les tendances, les risques et les sujets qui nécessitent une action ou un arbitrage.</p>
+          <p>Les règles de remontée d'information, les personnes destinataires et les situations pouvant donner lieu à une alerte sont définies avant le démarrage.</p>
+        </div>
+      </div>
+      <div class="relais-limits">
+        <div>
+          <h3>Ce que CAP90 Relais ne remplace pas</h3>
+          <ul class="nots two-col">
+            <li>Le rôle du manager</li>
+            <li>Les décisions de l'entreprise</li>
+            <li>Les échanges directs entre la personne et son équipe</li>
+            <li>La fonction RH</li>
+            <li>Un accompagnement juridique</li>
+            <li>Une médiation formelle</li>
+            <li>Un suivi thérapeutique ou médical</li>
+          </ul>
+        </div>
+        <p class="role">Nous ne sommes pas là pour maintenir artificiellement une situation. Nous sommes là pour rendre les évolutions, les irritants et les décisions nécessaires plus visibles.</p>
+      </div>
+      <a class="btn btn-ghost" data-mail="relais" href="#contact">Prolonger l'espace de confiance <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
   <section id="resume" class="resume">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Deux offres, deux moments</span>
+        <span class="eyebrow">Trois offres, trois moments</span>
         <h2>En résumé</h2>
       </div>
       <div class="offers2">
@@ -695,6 +793,12 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
           <b>CAP90 Prévention</b>
           <span class="desc">La préparation de l'arrivée et un suivi à J15, J30, J60 et J90.</span>
           <span class="go">Voir la prévention <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="offer-card relais-card" href="#relais">
+          <span class="when-label">Après J90, garder un regard externe</span>
+          <b>CAP90 Relais</b>
+          <span class="desc">Un tiers de confiance, avec une fréquence définie et des règles de confidentialité explicites.</span>
+          <span class="go">Voir le relais <span aria-hidden="true">→</span></span>
         </a>
       </div>
     </div>
@@ -766,6 +870,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
   const mail = (subject, body) => "mailto:" + TO + "?cc=" + encodeURIComponent(CC) + "&subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   const MAILS = {
     alerte: mail("Période d'essai à clarifier", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate d'arrivée :\nProblème observé :\nUrgence éventuelle :\n"),
+    relais: mail("Échange sur CAP90 Relais", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate de prise de poste :\nDurée souhaitée :\nRaison de la demande :\nPersonne qui serait accompagnée :\nInterlocuteur côté entreprise :\n"),
     prevention: mail("Préparer une prise de poste", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\nCe que vous voulez préparer :\n")
   };
   document.querySelectorAll("[data-mail]").forEach(a => { a.href = MAILS[a.dataset.mail]; });
