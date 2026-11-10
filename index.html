@@ -441,6 +441,22 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .sit-table tbody tr:first-child td b { color: var(--orange); }
 @media (max-width: 860px) { .prev-grid { grid-template-columns: 1fr; } }
 
+/* Summary of the two offers */
+.resume { padding-top: 0; }
+.offers2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.offer-card { display: grid; gap: 10px; align-content: start; padding: clamp(22px, 3vw, 32px); border-radius: var(--radius); border: 2px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; min-width: 0; }
+.offer-card:hover { transform: translateY(-2px); }
+.offer-card.alert { border-color: var(--orange); }
+.offer-card.prev:hover { border-color: var(--teal); }
+.offer-card .when-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.offer-card b { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 800; font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; line-height: 1.1; }
+.offer-card.alert b { color: var(--orange); }
+.offer-card.prev b { color: var(--teal); }
+.offer-card .desc { font-size: 16px; color: var(--muted); line-height: 1.5; }
+.offer-card .go { font-weight: 600; font-size: 15px; margin-top: 4px; }
+@media (max-width: 760px) { .offers2 { grid-template-columns: 1fr; } }
+.prev-grid { grid-template-columns: 1fr !important; max-width: 820px; }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -635,6 +651,29 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
+  <section id="resume" class="resume">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Deux offres, deux moments</span>
+        <h2>En résumé</h2>
+      </div>
+      <div class="offers2">
+        <a class="offer-card alert" href="#alerte">
+          <span class="when-label">La période d'essai dérape déjà</span>
+          <b>CAP90 Alerte</b>
+          <span class="desc">Un diagnostic en 7 à 10 jours pour comprendre ce qui bloque et décider de la suite.</span>
+          <span class="go">Voir le diagnostic <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="offer-card prev" href="#prevention">
+          <span class="when-label">La personne arrive prochainement</span>
+          <b>CAP90 Prévention</b>
+          <span class="desc">La préparation de l'arrivée et un suivi à J15, J30, J60 et J90.</span>
+          <span class="go">Voir la prévention <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="prevention" class="prevention">
     <div class="wrap">
       <div class="section-head">
@@ -653,15 +692,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <li>Détection des écarts et des irritants</li>
           </ul>
           <a class="btn btn-ghost prev-cta" data-mail="prevention" href="#contact">Préparer une prise de poste <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-        <div class="table-wrap">
-          <table class="sit-table">
-            <thead><tr><th scope="col">Situation</th><th scope="col">Offre adaptée</th></tr></thead>
-            <tbody>
-              <tr><td>La période d'essai dérape déjà</td><td><b>CAP90 Alerte</b></td></tr>
-              <tr><td>La personne arrive prochainement</td><td><b>CAP90 Prévention</b></td></tr>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
