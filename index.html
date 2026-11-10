@@ -477,9 +477,13 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
   .relais-grid, .relais-limits { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) { .nots.two-col { grid-template-columns: 1fr; } }
-.offers2 { grid-template-columns: 1.3fr 1fr 1fr; }
+.offers2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .offer-card.alert { box-shadow: 0 0 0 5px var(--orange-soft); }
-.offer-card.relais-card b { color: var(--ink); font-size: clamp(22px, 2.4vw, 28px); }
+.offer-card.relais-card b { color: var(--ink); }
+.offer-card { grid-template-rows: auto auto 1fr auto; }
+.offer-card b { font-size: clamp(22px, 2.3vw, 27px); white-space: nowrap; }
+.offer-card .go { align-self: end; }
+@media (max-width: 1100px) and (min-width: 961px) { .offer-card b { white-space: normal; } }
 .offer-card.relais-card:hover { border-color: var(--ink); }
 @media (max-width: 960px) { .offers2 { grid-template-columns: 1fr; } }
 
@@ -756,7 +760,6 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
             <li>Une alerte ponctuelle si un sujet important nécessite une décision</li>
             <li>Une synthèse de fin de période avec les points d'attention et les recommandations</li>
           </ul>
-          <p class="format-price"><span class="ph-inline">[PRIX CAP90 RELAIS À RENSEIGNER]</span> · forfait mensuel ou forfait de 3 mois, pas de tarif horaire</p>
         </div>
         <div class="conf-text">
           <h3>Un cadre de confidentialité explicite</h3>
@@ -792,19 +795,19 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
       </div>
       <div class="offers2">
         <a class="offer-card alert" href="#alerte">
-          <span class="when-label">La période d'essai dérape déjà</span>
+          <span class="when-label">Période d'essai qui dérape</span>
           <b>CAP90 Alerte</b>
           <span class="desc">Un diagnostic en 7 à 10 jours pour comprendre ce qui bloque et décider de la suite.</span>
           <span class="go">Voir le diagnostic <span aria-hidden="true">→</span></span>
         </a>
         <a class="offer-card prev" href="#prevention">
-          <span class="when-label">La personne arrive prochainement</span>
+          <span class="when-label">Arrivée prochaine</span>
           <b>CAP90 Prévention</b>
           <span class="desc">La préparation de l'arrivée et un suivi à J15, J30, J60 et J90.</span>
           <span class="go">Voir la prévention <span aria-hidden="true">→</span></span>
         </a>
         <a class="offer-card relais-card" href="#relais">
-          <span class="when-label">Après J90, garder un regard externe</span>
+          <span class="when-label">Après J90</span>
           <b>CAP90 Relais</b>
           <span class="desc">Un tiers de confiance, avec une fréquence définie et des règles de confidentialité explicites.</span>
           <span class="go">Voir le relais <span aria-hidden="true">→</span></span>
