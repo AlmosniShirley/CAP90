@@ -456,6 +456,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 @media (max-width: 760px) { .offers2 { grid-template-columns: 1fr; } }
 .prev-grid { grid-template-columns: 1fr !important; max-width: 820px; }
 
+.anchor-alias { display: block; height: 0; }
+section[id], .anchor-alias { scroll-margin-top: 72px; }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -516,6 +519,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
+  <span id="offre" class="anchor-alias" aria-hidden="true"></span>
   <section id="alerte" class="offer">
     <div class="wrap">
       <div class="section-head">
