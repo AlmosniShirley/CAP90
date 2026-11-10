@@ -512,11 +512,14 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
 .prev-track { margin-top: 8px; }
 .prev-track .step { gap: 8px; }
 .prev-track .step .what { font-size: 14px; }
-.prev-track .livrable { margin-top: 8px; font-size: 14px; }
+.prev-track .livrable { margin-top: 8px; font-size: 14px; align-self: end; }
+.prev-track .step { grid-template-rows: auto auto auto 1fr auto; }
+.prev-track .step ul { font-size: 15px; gap: 8px; }
 @media (max-width: 760px) {
   .steps.steps-3 { grid-template-columns: 1fr; }
   .steps.steps-3 + .steps.steps-3 { margin-top: 22px; }
-  .prev-track .step .node { grid-row: 1 / span 5; }
+  .prev-track .step .node { grid-row: 1 / span 4; }
+  .prev-track .step { grid-template-rows: none; }
   .prev-track .step.cont::before { display: block; }
 }
 
@@ -762,26 +765,26 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
       </div>
       <div class="track prev-track">
         <ol class="steps steps-3">
-          <li class="step brief"><span class="node"></span><span class="when">Avant l'arrivée</span><span class="title">Clarifier le poste</span><span class="what">Nous auditons le poste avec l'entreprise et le manager&nbsp;:</span>
-            <ul ><li>Pourquoi le poste existe</li><li>Ce que la personne doit réellement accomplir</li><li>Ce qui est prioritaire dans les 30, 60 et 90 premiers jours</li><li>Les objectifs et critères de réussite</li><li>Les moyens réellement disponibles</li><li>Les interlocuteurs clés</li><li>Les zones de décision</li><li>Les contraintes ou évolutions prévisibles</li><li>Les éventuels écarts entre le poste présenté et le poste réellement disponible</li></ul>
-            <p class="livrable"><b>Livrable&nbsp;:</b> Une synthèse de prise de poste avec les priorités, les attentes, les interlocuteurs, les moyens et les points de vigilance.</p></li>
-          <li class="step"><span class="node"></span><span class="when">Avant J0</span><span class="title">Préparer l'arrivée</span><span class="what">Nous vérifions avec l'entreprise que les conditions de démarrage sont réunies&nbsp;:</span>
-            <ul ><li>Matériel, accès et outils</li><li>Informations utiles</li><li>Agenda des premiers jours</li><li>Présentation aux interlocuteurs clés</li><li>Disponibilité du manager</li><li>Premières réunions</li><li>Feuille de route des premières semaines</li></ul>
-            <p class="livrable"><b>Livrable&nbsp;:</b> Un plan d'arrivée concret et partagé avec les personnes concernées.</p></li>
-          <li class="step cont"><span class="node"></span><span class="when">J0 à J15</span><span class="title">Vérifier la réalité du démarrage</span><span class="what">Nous recueillons les premiers retours de la personne recrutée et du manager&nbsp;:</span>
-            <ul ><li>Ce qui est conforme à ce qui avait été annoncé</li><li>Ce qui reste flou</li><li>Les premiers obstacles</li><li>Les informations manquantes</li><li>Les relations ou interfaces à faciliter</li><li>Les décisions qui ne peuvent pas attendre</li></ul>
-            <p class="livrable"><b>Livrable&nbsp;:</b> Un point de situation avec les premiers ajustements à effectuer.</p></li>
+          <li class="step brief"><span class="node"></span><span class="when">Avant l'arrivée</span><span class="title">Clarifier le poste</span>
+            <ul><li>Raison d'être du poste et missions réelles</li><li>Priorités à 30, 60 et 90 jours, objectifs et critères de réussite</li><li>Moyens, interlocuteurs clés et zones de décision</li><li>Écarts entre le poste présenté et le poste réel</li></ul>
+            <p class="livrable"><b>Livrable&nbsp;:</b> une synthèse de prise de poste et ses points de vigilance.</p></li>
+          <li class="step"><span class="node"></span><span class="when">Avant J0</span><span class="title">Préparer l'arrivée</span>
+            <ul><li>Matériel, accès et outils prêts</li><li>Agenda des premiers jours et premières réunions</li><li>Présentations aux interlocuteurs clés, disponibilité du manager</li></ul>
+            <p class="livrable"><b>Livrable&nbsp;:</b> un plan d'arrivée partagé avec les personnes concernées.</p></li>
+          <li class="step cont"><span class="node"></span><span class="when">J0 à J15</span><span class="title">Vérifier le démarrage</span>
+            <ul><li>Ce qui est conforme à l'annonce, ce qui reste flou</li><li>Premiers obstacles et informations manquantes</li><li>Interfaces à faciliter, décisions urgentes</li></ul>
+            <p class="livrable"><b>Livrable&nbsp;:</b> un point de situation et les premiers ajustements.</p></li>
         </ol>
         <ol class="steps steps-3">
-          <li class="step"><span class="node"></span><span class="when">J30</span><span class="title">Mesurer les premiers écarts</span><span class="what">Nous vérifions&nbsp;:</span>
-            <ul ><li>Si les priorités sont comprises</li><li>Si les premiers objectifs sont réalistes</li><li>Si les moyens sont cohérents avec les attentes</li><li>Si la personne peut réellement avancer</li><li>Si le manager est suffisamment disponible</li><li>Si le poste correspond à ce qui avait été présenté</li><li>Si des irritants risquent de s'installer</li></ul>
-            <p class="livrable"><b>Livrable&nbsp;:</b> Une synthèse des écarts et un plan d'action priorisé.</p></li>
-          <li class="step"><span class="node"></span><span class="when">J60</span><span class="title">Ajuster avant que la situation ne se tende</span><span class="what">Nous faisons le point sur&nbsp;:</span>
-            <ul ><li>La montée en autonomie</li><li>Les blocages persistants</li><li>Les arbitrages nécessaires</li><li>L'évolution éventuelle du poste</li><li>La qualité des interactions</li><li>Les attentes qui doivent être reformulées</li><li>Les signaux faibles à suivre</li></ul>
-            <p class="livrable"><b>Livrable&nbsp;:</b> Une revue de situation avec recommandations d'ajustement.</p></li>
-          <li class="step sig"><span class="node"></span><span class="when">J90</span><span class="title">Faire le bilan et décider de la suite</span><span class="what">Nous faisons le bilan de la prise de poste&nbsp;:</span>
-            <ul ><li>Ce qui a été réalisé</li><li>Ce qui reste à construire</li><li>Les écarts entre les attentes initiales et la réalité</li><li>Les conditions de réussite pour la suite</li><li>Les points de vigilance</li><li>Les décisions à prendre pour la suite de la collaboration</li></ul>
-            <p class="livrable"><b>Livrable&nbsp;:</b> Un bilan de prise de poste et une feuille de route pour les prochains mois.</p></li>
+          <li class="step"><span class="node"></span><span class="when">J30</span><span class="title">Mesurer les premiers écarts</span>
+            <ul><li>Priorités comprises, objectifs réalistes</li><li>Moyens et disponibilité du manager à la hauteur</li><li>Poste conforme à la présentation, irritants naissants</li></ul>
+            <p class="livrable"><b>Livrable&nbsp;:</b> une synthèse des écarts et un plan d'action priorisé.</p></li>
+          <li class="step"><span class="node"></span><span class="when">J60</span><span class="title">Ajuster avant que ça se tende</span>
+            <ul><li>Autonomie et blocages persistants</li><li>Arbitrages et évolution éventuelle du poste</li><li>Qualité des interactions, attentes à reformuler</li></ul>
+            <p class="livrable"><b>Livrable&nbsp;:</b> une revue de situation et des recommandations.</p></li>
+          <li class="step sig"><span class="node"></span><span class="when">J90</span><span class="title">Faire le bilan, décider de la suite</span>
+            <ul><li>Ce qui est réalisé, ce qui reste à construire</li><li>Écarts entre attentes initiales et réalité</li><li>Conditions de réussite et décisions pour la suite</li></ul>
+            <p class="livrable"><b>Livrable&nbsp;:</b> un bilan et une feuille de route pour les prochains mois.</p></li>
         </ol>
       </div>
       <div class="prev-sub">
