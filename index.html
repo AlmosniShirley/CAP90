@@ -248,6 +248,10 @@ header.site .btn { padding: 11px 18px; font-size: 15px; }
 .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 700; background: var(--teal); color: #fff; }
 .founder:nth-child(2) .avatar { background: var(--orange); }
 .founder span { font-weight: 600; color: var(--band-ink); }
+a.founder { text-decoration: none; border-radius: 999px; padding-right: 6px; }
+.founder .who { display: grid; gap: 2px; }
+.founder .li { font-size: 13px; font-weight: 500; color: var(--band-muted); }
+a.founder:hover .li { color: var(--orange); }
 @media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; } }
 
 /* Final CTA */
@@ -552,7 +556,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p>Nous avons construit notre expérience dans des environnements où les sujets humains, techniques et business sont impossibles à séparer.</p>
         <p class="diff"><b>Notre différence&nbsp;:</b> un tiers externe, humain et terrain, qui facilite, alerte et traduit. Sans faire à la place de l'entreprise, et sans jargon inutile.</p>
         <div class="founders">
-          <div class="founder"><span class="avatar" aria-hidden="true">SA</span><span>Shirley Almosni Chiche</span></div>
+          <a class="founder" href="https://www.linkedin.com/in/shirley-almosni-chiche/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">SA</span><span class="who"><span>Shirley Almosni Chiche</span><span class="li">Voir le profil LinkedIn ↗</span></span></a>
           <div class="founder"><span class="avatar" aria-hidden="true">CN</span><span>Coralie Nohel</span></div>
         </div>
       </div>
