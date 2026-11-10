@@ -294,6 +294,15 @@ a.copy { text-decoration: none; display: inline-flex; align-items: center; }
 .copy.sos-send:hover { border-color: var(--orange); background: color-mix(in srgb, var(--orange) 85%, #000); }
 .cta-mail { margin-top: 14px; font-size: 15px; color: var(--muted); }
 .cta-mail .addr { color: var(--ink); font-weight: 600; user-select: all; overflow-wrap: anywhere; }
+.kw-hint { font-size: 15px; color: var(--muted); margin-top: 6px; }
+.kw-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: grid; gap: 2px; padding: 10px 14px; border-radius: 12px; border: 1px dashed var(--teal); background: var(--bg); text-decoration: none; transition: border-color .15s ease, transform .15s ease; }
+.chip:hover { border-style: solid; transform: translateY(-1px); }
+.chip b { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal); }
+.chip span { font-size: 13px; color: var(--muted); }
+.chip-sos { border-color: var(--orange); }
+.chip-sos b { color: var(--orange); }
+.btn.ready { box-shadow: 0 0 0 5px var(--orange-soft); }
 .keyword-card.ready { border-style: solid; border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
 
 /* Values */
@@ -588,16 +597,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <div class="meter" aria-hidden="true"><span id="meter-bar"></span></div>
             <p class="match-result" id="match-result" aria-live="polite">Cochez ce qui vous ressemble.</p>
           </div>
-          <div class="keyword-card" id="kw-card">
-            <span class="label">Écrivez-nous le mot-clé</span>
-            <span class="keyword" id="kw">PAS DE RUPTURE</span>
-            <div class="kw-actions"><a class="copy send" id="send-kw" href="#contact">Envoyer par e-mail</a><button class="copy" id="copy-kw" type="button">Copier le mot-clé</button></div>
-          </div>
-          <a class="btn btn-primary" id="cta-main" href="#contact">Réserver mon échange de cadrage <span class="arrow" aria-hidden="true">→</span></a>
-          <div class="sos">
-            <span class="sos-q">Déjà en période d'essai et ça tangue&nbsp;?</span>
-            <span class="sos-line">Écrivez-nous <span class="sos-kw" id="kw-sos">SOS PÉRIODE D'ESSAI</span></span>
-            <div class="kw-actions"><a class="copy send sos-send" id="send-sos" href="#contact">Envoyer par e-mail</a><button class="copy" id="copy-sos" type="button">Copier</button></div>
+          <a class="btn btn-primary" id="cta-main" href="#contact">Je réserve mon offre de cadrage <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="kw-hint">Pour le plaisir, glissez un mot-clé dans votre message&nbsp;:</p>
+          <div class="kw-chips">
+            <a class="chip" id="send-kw" href="#contact"><b>PAS DE RUPTURE</b><span>Vous préparez une arrivée</span></a>
+            <a class="chip chip-sos" id="send-sos" href="#contact"><b>SOS PÉRIODE D'ESSAI</b><span>Ça tangue déjà</span></a>
           </div>
         </div>
       </div>
@@ -633,23 +637,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   document.getElementById("send-sos").href = mail("SOS PÉRIODE D'ESSAI", "Bonjour Shirley et Coralie,\n\nSOS PÉRIODE D'ESSAI : une personne recrutée est en période d'essai et la situation nous inquiète." + fields);
 
   const boxes = [...document.querySelectorAll(".match input")];
-  const bar = document.getElementById("meter-bar"), res = document.getElementById("match-result"), card = document.getElementById("kw-card");
-  const msgs = ["Cochez ce qui vous ressemble.", "33 % · Ça commence bien.", "66 % · Il y a clairement quelque chose entre nous.", "100 % · Match parfait. Écrivez-nous le mot-clé."];
+  const bar = document.getElementById("meter-bar"), res = document.getElementById("match-result"), card = document.getElementById("cta-main");
+  const msgs = ["Cochez ce qui vous ressemble.", "33 % · Ça commence bien.", "66 % · Il y a clairement quelque chose entre nous.", "100 % · Match parfait. On se parle ?"];
   const update = () => { const n = boxes.filter(b => b.checked).length; bar.style.width = (n === 3 ? 100 : n * 33) + "%"; bar.classList.toggle("full", n === 3); res.textContent = msgs[n]; card.classList.toggle("ready", n === 3); };
   boxes.forEach(b => b.addEventListener("change", update)); update();
 
-  const btn = document.getElementById("copy-kw");
-  btn.addEventListener("click", () => {
-    const done = () => { btn.textContent = "Copié"; setTimeout(() => btn.textContent = "Copier le mot-clé", 1800); };
-    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("kw")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Sélectionné, faites Ctrl+C"; };
-    try { navigator.clipboard.writeText("PAS DE RUPTURE").then(done, fallback); } catch (e) { fallback(); }
-  });
-  const sos = document.getElementById("copy-sos");
-  sos.addEventListener("click", () => {
-    const done = () => { sos.textContent = "Copié"; setTimeout(() => sos.textContent = "Copier", 1800); };
-    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("kw-sos")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); sos.textContent = "Sélectionné, faites Ctrl+C"; };
-    try { navigator.clipboard.writeText("SOS PÉRIODE D'ESSAI").then(done, fallback); } catch (e) { fallback(); }
-  });
 </script>
 
 </body>
