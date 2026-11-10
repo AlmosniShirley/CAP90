@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315233b'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23ffffff' text-anchor='middle'%3E90%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Cap 90 · Conciergerie de prise de poste">
+<meta property="og:description" content="Sécuriser les 90 premiers jours de vos profils clés.">
+<title>Conciergerie de prise de poste</title>
+<meta name="description" content="Cap 90 sécurise les 90 premiers jours de vos profils clés : préparation de l'arrivée, suivi à 15, 30, 60 et 90 jours, détection des signaux faibles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+html, body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Layout: one narrow reading column inside wide bands; a 90-day track is the recurring motif from hero to offer. */
+:root {
+  --bg: #f5f7f7;
+  --surface: #ffffff;
+  --ink: #15233b;
+  --muted: #55637a;
+  --line: #dbe2e4;
+  --teal: #0d7a72;
+  --teal-soft: #e3f1ef;
+  --orange: #d9692b;
+  --orange-soft: #fbeee5;
+  --band: #15233b;
+  --band-ink: #eef3f5;
+  --band-muted: #a9b6c6;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
+  --max: 1120px;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1726; --surface: #16213a; --ink: #eaf0f4; --muted: #a3b0c2; --line: #2a3752;
+    --teal: #3fbfb2; --teal-soft: #15343a; --orange: #f08a4e; --orange-soft: #3a261c;
+    --band: #0a111d; --band-ink: #eef3f5; --band-muted: #9aa8ba; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1726; --surface: #16213a; --ink: #eaf0f4; --muted: #a3b0c2; --line: #2a3752;
+  --teal: #3fbfb2; --teal-soft: #15343a; --orange: #f08a4e; --orange-soft: #3a261c;
+  --band: #0a111d; --band-ink: #eef3f5; --band-muted: #9aa8ba; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+
+.wrap {
+  max-width: var(--max); margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: clamp(64px, 9vw, 112px); }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+h2 { font-size: clamp(30px, 4.2vw, 46px); font-weight: 700; }
+h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 6px; }
+
+.eyebrow {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange);
+}
+.lede { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 60ch; }
+.section-head { display: grid; gap: 16px; max-width: 760px; margin-bottom: clamp(36px, 5vw, 56px); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: 600 16px/1 var(--font-body); text-decoration: none; cursor: pointer;
+  padding: 16px 24px; border-radius: 999px; border: 1.5px solid transparent;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--orange); color: #fff; }
+.btn-primary:hover { background: color-mix(in srgb, var(--orange) 88%, #000); }
+.btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn .arrow { transition: transform .15s ease; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* Header */
+header.site {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-decoration: none; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+nav.links { display: flex; gap: 28px; font-size: 15px; color: var(--muted); }
+nav.links a { text-decoration: none; }
+nav.links a:hover { color: var(--ink); }
+header.site .btn { padding: 11px 18px; font-size: 15px; }
+@media (max-width: 860px) { nav.links { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(56px, 8vw, 96px) clamp(48px, 6vw, 80px); }
+.hero-grid { display: grid; gap: 28px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+  padding: 7px 14px; border-radius: 999px; background: var(--orange-soft); color: var(--orange);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+}
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+.hero h1 { font-size: clamp(42px, 7.4vw, 92px); font-weight: 800; letter-spacing: -0.035em; max-width: 14ch; }
+.hero h1 em { font-style: normal; color: var(--teal); }
+.hero .lede { max-width: 56ch; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-note { font-size: 14px; color: var(--muted); }
+
+/* 90-day track */
+.track {
+  margin-top: clamp(40px, 6vw, 64px);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: clamp(22px, 3vw, 32px);
+}
+.track-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-bottom: 26px; font-size: 14px; color: var(--muted); }
+.track-head strong { color: var(--ink); font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 18px; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 22px; height: 6px; border-radius: 3px; display: inline-block; }
+.legend .l-gap { background: repeating-linear-gradient(90deg, var(--orange) 0 5px, transparent 5px 9px); }
+.legend .l-us { background: var(--teal); }
+
+.steps { display: grid; grid-template-columns: 1.3fr 1.3fr repeat(5, 1fr); list-style: none; margin: 0; padding: 0; }
+.step { position: relative; display: grid; gap: 6px; padding-right: 12px; min-width: 0; align-content: start; }
+.step::before { content: ""; position: absolute; top: 9px; left: 11px; right: -11px; height: 4px; border-radius: 2px; background: var(--teal); }
+.step:last-child::before { display: none; }
+.step .node { position: relative; z-index: 1; width: 22px; height: 22px; border-radius: 50%; background: var(--surface); border: 4px solid var(--teal); margin-bottom: 8px; }
+.step.brief .node { background: var(--teal); }
+.step.brief .when { color: var(--teal); }
+.step.sig .node { border-color: var(--orange); }
+
+.brief-panel { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); gap: 16px 40px; }
+.brief-intro { display: grid; gap: 6px; align-content: start; }
+.brief-intro .phase { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.brief-intro h3 { font-size: 22px; }
+.brief-intro p { color: var(--muted); font-size: 15px; }
+.brief-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; font-size: 15px; }
+.brief-list li { padding-left: 18px; position: relative; line-height: 1.45; }
+.brief-list li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 8px; height: 2px; background: var(--teal); }
+.brief-list li.gap-item::before { background: var(--orange); }
+@media (max-width: 760px) { .brief-panel, .brief-list { grid-template-columns: 1fr; } }
+.step .when { font-family: var(--font-display); font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; }
+.step .what { font-size: 14px; color: var(--muted); line-height: 1.45; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; gap: 22px; }
+  .step { grid-template-columns: 22px 1fr; column-gap: 16px; padding-right: 0; }
+  .step::before { top: 11px; left: 9px; right: auto; bottom: -33px; width: 4px; height: auto; }
+  .step .node { grid-row: span 2; margin: 0; }
+}
+
+/* Problem */
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 3vw, 36px); display: grid; gap: 16px; align-content: start; min-width: 0; }
+.card.risk { background: var(--orange-soft); border-color: transparent; }
+.card.risk h3 { color: var(--orange); }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.checks li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+.checks li::before {
+  content: ""; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%;
+  background: var(--teal-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7a72' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat;
+}
+.risk-cost { display: grid; gap: 10px; margin-top: 4px; }
+.risk-cost div { display: flex; justify-content: space-between; gap: 16px; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--orange) 25%, transparent); font-size: 15px; }
+.risk-cost b { font-weight: 600; }
+@media (max-width: 760px) { .problem-grid { grid-template-columns: 1fr; } }
+
+/* Key figures */
+.figures { padding-top: 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.stat-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 2.6vw, 30px); display: grid; gap: 20px; align-content: start; min-width: 0; }
+.stat-group .phase { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.stat { display: grid; gap: 8px; padding-top: 18px; border-top: 1px solid var(--line); }
+.stat .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(40px, 4.8vw, 56px); line-height: 1; letter-spacing: -0.03em; color: var(--teal); font-variant-numeric: tabular-nums; }
+.stat-group.cost .num { color: var(--orange); }
+.stat .num small { font-size: 0.5em; letter-spacing: -0.01em; }
+.stat .txt { font-size: 16px; line-height: 1.45; }
+.stat .src { font-size: 13px; color: var(--muted); }
+.stat .src a { text-decoration-color: var(--line); text-underline-offset: 3px; }
+.stat .src a:hover { text-decoration-color: currentColor; }
+.figures-close { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; }
+.figures-close p { font-family: var(--font-display); font-size: clamp(20px, 2.3vw, 26px); font-weight: 600; letter-spacing: -0.015em; max-width: 34ch; }
+@media (max-width: 860px) { .stats-grid { grid-template-columns: 1fr; } }
+
+/* Offer */
+.offer { background: var(--surface); border-block: 1px solid var(--line); }
+.not-replace { margin-top: 4px; padding: 18px 22px; border-radius: 12px; background: var(--teal-soft); color: var(--ink); max-width: 760px; font-size: 16px; }
+.not-replace b { color: var(--teal); }
+.pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.pillar { padding: 28px 24px 8px 0; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.pillar + .pillar { padding-left: 24px; border-left: 1px solid var(--line); }
+.pillar.upstream .phase { color: var(--orange); }
+.pillar .sas { font-size: 16px; line-height: 1.5; padding: 14px 16px; border-radius: 10px; background: var(--teal-soft); color: var(--ink); }
+.pillar .sas b { color: var(--teal); font-weight: 600; }
+@media (max-width: 1080px) and (min-width: 861px) {
+  .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pillar:nth-child(3) { padding-left: 0; border-left: 0; }
+  .pillar:nth-child(n+3) { border-top: 1px solid var(--line); padding-top: 24px; }
+}
+.pillar .phase { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.pillar ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: 16px; }
+.pillar li { padding-left: 18px; position: relative; }
+.pillar li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 8px; height: 2px; background: var(--teal); }
+@media (max-width: 860px) {
+  .pillars { grid-template-columns: 1fr; }
+  .pillar, .pillar + .pillar { padding: 24px 0; border-left: 0; }
+  .pillar + .pillar { border-top: 1px solid var(--line); }
+}
+
+/* Impact */
+.impact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.gains { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.gains li { display: grid; grid-template-columns: 1fr; padding-block: 20px; border-bottom: 1px solid var(--line); font-family: var(--font-display); font-size: clamp(20px, 2.3vw, 26px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; }
+.gains li:first-child { border-top: 1px solid var(--line); }
+.frame { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 3vw, 36px); display: grid; gap: 18px; }
+.frame .eyebrow { color: var(--teal); }
+@media (max-width: 860px) { .impact-grid { grid-template-columns: 1fr; } }
+
+/* Why us */
+.why { background: var(--band); color: var(--band-ink); }
+.why .eyebrow { color: var(--orange); }
+.why-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.why h2 { color: var(--band-ink); }
+.why p { color: var(--band-muted); font-size: 18px; max-width: 58ch; }
+.why .stack { display: grid; gap: 20px; }
+.moments { display: grid; gap: 0; }
+.moment { padding-block: 18px; border-top: 1px solid color-mix(in srgb, var(--band-ink) 16%, transparent); display: grid; gap: 4px; }
+.moment .q { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--band-muted); }
+.moment .a { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--band-ink); line-height: 1.3; }
+.diff { margin-top: 8px; padding: 20px 22px; border-radius: 12px; background: color-mix(in srgb, var(--band-ink) 7%, transparent); color: var(--band-ink); font-size: 17px; }
+.diff b { color: var(--orange); }
+.founders { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+.founder { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; background: var(--teal); color: #fff; }
+.founder:nth-child(2) .avatar { background: var(--orange); }
+.founder span { font-weight: 600; color: var(--band-ink); }
+@media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* Final CTA */
+.cta { text-align: left; }
+.cta-box {
+  border-radius: 24px; background: var(--surface); border: 1px solid var(--line);
+  padding: clamp(28px, 5vw, 64px); display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center;
+}
+.cta-box h2 { font-size: clamp(32px, 4.6vw, 52px); }
+.cta-box .lede { margin-top: 14px; }
+.keyword-card { background: var(--bg); border: 1px dashed var(--teal); border-radius: 16px; padding: 24px; display: grid; gap: 14px; }
+.keyword-card .label { font-size: 14px; color: var(--muted); }
+.keyword { font-family: var(--font-display); font-weight: 800; font-size: clamp(26px, 3.4vw, 34px); letter-spacing: 0.02em; color: var(--teal); user-select: all; }
+.copy { font: 600 14px/1 var(--font-body); padding: 10px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; width: fit-content; }
+.copy:hover { border-color: var(--ink); }
+.cta-actions { display: grid; gap: 12px; }
+.cta-actions .btn { justify-content: center; }
+.cta-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--muted); margin-top: 18px; }
+.cta-meta span::before { content: "✓"; color: var(--teal); font-weight: 700; margin-right: 6px; }
+@media (max-width: 860px) { .cta-box { grid-template-columns: 1fr; } }
+
+footer { padding-block: 32px 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* Entrance: content is visible at rest; only a gentle lift on load. */
+@keyframes rise { from { transform: translateY(10px); } to { transform: none; } }
+.hero-grid > *, .track { animation: rise .6s ease both; }
+.hero-grid > *:nth-child(2) { animation-delay: .05s; }
+.hero-grid > *:nth-child(3) { animation-delay: .1s; }
+.hero-grid > *:nth-child(4) { animation-delay: .15s; }
+.track { animation-delay: .22s; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cap 90, retour en haut"><span class="brand-mark">90</span>Cap 90</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#probleme">Le problème</a>
+      <a href="#chiffres">Les chiffres</a>
+      <a href="#offre">L'offre</a>
+      <a href="#impact">L'impact</a>
+      <a href="#nous">Qui sommes-nous</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Réserver 30 min</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <span class="pill"><span class="dot"></span>Offre pilote · Conciergerie de prise de poste</span>
+        <h1>Un recrutement ne se gagne pas à <em>la signature.</em></h1>
+        <p class="lede">Nous sécurisons les 90 premiers jours de vos profils clés. Pour les ESN et scale-ups où la même personne porte déjà la RH, le management, l'administratif et l'expérience collaborateur.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contact">Planifier un échange de cadrage <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#offre">Voir le déroulé</a>
+        </div>
+      </div>
+
+      <div class="track" aria-label="Déroulé de l'accompagnement, du brief et diagnostic au 90e jour">
+        <div class="track-head">
+          <strong>Du diagnostic au jour 90</strong>
+        </div>
+        <ol class="steps">
+          <li class="step brief"><span class="node"></span><span class="when">En amont</span><span class="what">Brief, audit et diagnostic&nbsp;: attentes, objectifs et poste tel qu'il sera vraiment</span></li>
+          <li class="step sig"><span class="node"></span><span class="when">Signature</span><span class="what">Attentes clarifiées, matériel, accès et premières rencontres préparés</span></li>
+          <li class="step"><span class="node"></span><span class="when">J0</span><span class="what">Arrivée préparée, feuille de route en main</span></li>
+          <li class="step"><span class="node"></span><span class="when">J15</span><span class="what">Premier point&nbsp;: réalité vécue</span></li>
+          <li class="step"><span class="node"></span><span class="when">J30</span><span class="what">Mises en relation, premiers irritants</span></li>
+          <li class="step"><span class="node"></span><span class="when">J60</span><span class="what">Autonomie, écarts poste promis / vécu</span></li>
+          <li class="step"><span class="node"></span><span class="when">J90</span><span class="what">Bilan et points de décision</span></li>
+        </ol>
+        <div class="brief-panel">
+          <div class="brief-intro">
+            <span class="phase">En amont</span>
+            <h3>Brief, audit et diagnostic</h3>
+            <p>Avant tout le reste, nous auditons le poste avec vous. Vous clarifiez&nbsp;:</p>
+          </div>
+          <ul class="brief-list">
+            <li>Pourquoi le poste existe</li>
+            <li>Ce que la personne devra réellement accomplir</li>
+            <li>Les attentes et les objectifs, posés clairement</li>
+            <li>Les moyens disponibles</li>
+            <li>Les critères de réussite</li>
+            <li>Les interfaces et le mode de décision</li>
+            <li class="gap-item">L'écart éventuel entre la promesse et la réalité</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="probleme">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Le problème</span>
+        <h2>Entre la signature et la prise de poste, personne ne tient vraiment l'ensemble du sujet.</h2>
+        <p class="lede">Le matériel, les accès, les bonnes rencontres, les attentes et les signaux faibles sont traités trop tard, ou pas du tout.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="card">
+          <h3>Vous êtes concerné si…</h3>
+          <ul class="checks">
+            <li>Vous venez de recruter un profil clé.</li>
+            <li>Vos managers sont déjà saturés.</li>
+            <li>Vous n'avez pas de RH ou d'office manager dédié.</li>
+            <li>Vous voulez éviter une rupture de période d'essai ou un départ précoce.</li>
+          </ul>
+        </div>
+        <div class="card risk">
+          <h3>Le risque caché</h3>
+          <p>Un poste mal compris, une promesse décalée ou une arrivée mal préparée peuvent coûter cher.</p>
+          <div class="risk-cost">
+            <div><span>Plusieurs mois de travail</span><b>perdus</b></div>
+            <div><span>Votre crédibilité</span><b>entamée</b></div>
+            <div><span>Une campagne de recrutement</span><b>à relancer</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chiffres" class="figures">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Les chiffres</span>
+        <h2>Une intégration ratée coûte cher, et longtemps.</h2>
+        <p class="lede">Ce que disent les études sur l'arrivée des nouveaux collaborateurs.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-group">
+          <span class="phase">L'onboarding aujourd'hui</span>
+          <div class="stat">
+            <span class="num">12&nbsp;%</span>
+            <span class="txt">des salariés estiment que leur entreprise fait un excellent travail d'intégration.</span>
+            <span class="src"><a href="https://www.gallup.com/workplace/247172/problems-onboarding-program.aspx" target="_blank" rel="noopener">Gallup</a></span>
+          </div>
+          <div class="stat">
+            <span class="num">29&nbsp;%</span>
+            <span class="txt">seulement des nouveaux arrivants se sentent pleinement préparés et soutenus pour réussir dans leur poste.</span>
+            <span class="src"><a href="https://www.gallup.com/file/workplace/247076/Gallup_Perspective_on_Creating_an_Exceptional_Onboarding_Journey_for_Your_New_Employees.pdf" target="_blank" rel="noopener">Gallup, 2019</a></span>
+          </div>
+        </div>
+        <div class="stat-group cost">
+          <span class="phase">Le coût d'un raté</span>
+          <div class="stat">
+            <span class="num">36&nbsp;%</span>
+            <span class="txt">des CDI sont rompus avant la fin de la première année, dont 12,7&nbsp;% en fin de période d'essai.</span>
+            <span class="src"><a href="https://www.legisocial.fr/actualites-sociales/1353-plus-dun-tiers-des-cdi-sont-rompus-avant-un.html" target="_blank" rel="noopener">DARES, 2015 (CDI signés en 2011)</a></span>
+          </div>
+          <div class="stat">
+            <span class="num">20 à 200<small>&nbsp;k€</small></span>
+            <span class="txt">le coût estimé d'un recrutement raté, selon la taille de l'entreprise et le poste.</span>
+            <span class="src"><a href="https://www.entreprises.cci-paris-idf.fr/web/rh/recrutement-rate-quelles-consequences-et-comment-l-eviter" target="_blank" rel="noopener">CCI Paris Île-de-France</a></span>
+          </div>
+        </div>
+        <div class="stat-group">
+          <span class="phase">Le temps perdu</span>
+          <div class="stat">
+            <span class="num">11<small>&nbsp;semaines</small></span>
+            <span class="txt">en moyenne pour recruter un cadre. Autant de temps à repartir de zéro après un départ.</span>
+            <span class="src"><a href="https://corporate.apec.fr/files/live/sites/corporate/files/Nos%20%C3%A9tudes/pdf/pratiques-de-recrutements-des-cadres-2022" target="_blank" rel="noopener">Apec, 2022</a></span>
+          </div>
+          <div class="stat">
+            <span class="num">12<small>&nbsp;mois</small></span>
+            <span class="txt">c'est le temps qu'il peut falloir à un nouvel arrivant pour atteindre sa pleine performance.</span>
+            <span class="src"><a href="https://www.gallup.com/file/workplace/247076/Gallup_Perspective_on_Creating_an_Exceptional_Onboarding_Journey_for_Your_New_Employees.pdf" target="_blank" rel="noopener">Gallup, 2019</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="figures-close">
+        <p>Les 90 premiers jours décident de la suite. Autant les préparer.</p>
+        <a class="btn btn-ghost" href="#offre">Voir comment nous les sécurisons <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="offre" class="offer">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">L'offre</span>
+        <h2>Nous préparons, facilitons et suivons les premières semaines de la personne recrutée.</h2>
+        <p class="not-replace">Nous ne remplaçons <b>ni la RH ni le manager</b>. Nous prenons en charge ce qui tombe entre les deux quand personne n'a le temps de le tenir correctement.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar upstream">
+          <span class="phase">En amont</span>
+          <h3>Brief, audit et diagnostic du poste</h3>
+          <ul>
+            <li>Pourquoi le poste existe</li>
+            <li>Attentes, objectifs et critères de réussite</li>
+            <li>Moyens, interfaces et mode de décision</li>
+            <li>L'écart éventuel entre la promesse et la réalité</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <span class="phase">Avant l'arrivée</span>
+          <h3>Une arrivée prête dès le premier jour</h3>
+          <ul>
+            <li>Clarification des attentes</li>
+            <li>Vérification du matériel et des accès</li>
+            <li>Préparation des premières rencontres</li>
+            <li>Informations utiles et feuille de route de prise de poste</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <span class="phase">Pendant les 90 jours</span>
+          <h3>Un suivi régulier, à J15, J30, J60 et J90</h3>
+          <ul>
+            <li>Écoute de la réalité vécue</li>
+            <li>Facilitation des mises en relation</li>
+            <li>Aide à la montée en autonomie</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <span class="phase">Signaux faibles</span>
+          <h3>Un sas de confidences et de coaching</h3>
+          <p class="sas">Un espace <b>neutre et confidentiel</b> pour la personne recrutée, avec un <b>coaching continu</b>. Les alertes remontent avant le départ.</p>
+          <ul>
+            <li>Détection des écarts entre poste promis et poste vécu</li>
+            <li>Remontée anonymisée des irritants</li>
+            <li>Alerte sur les sujets qui demandent une décision</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="wrap impact-grid">
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">L'impact</span>
+          <h2>Ce que vous sécurisez</h2>
+        </div>
+        <ul class="gains">
+          <li>Une arrivée préparée et cohérente avec la promesse faite.</li>
+          <li>Moins de charge mentale pour les fondateurs et les managers.</li>
+          <li>Une montée en autonomie plus lisible.</li>
+          <li>Des irritants détectés avant qu'ils ne deviennent des départs.</li>
+        </ul>
+      </div>
+      <div class="frame">
+        <span class="eyebrow">Notre cadre</span>
+        <ul class="checks">
+          <li>Périmètre, fréquence, livrables et prix définis avant le démarrage.</li>
+          <li>Confidentialité clarifiée dès le premier échange.</li>
+          <li>Pas de checklist décorative&nbsp;: des points de décision et des actions.</li>
+          <li>L'entreprise reste responsable du management et des arbitrages.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="nous" class="why">
+    <div class="wrap why-grid">
+      <div class="stack">
+        <span class="eyebrow">Pourquoi nous</span>
+        <h2>Le recrutement IT et les ESN, nous les connaissons de l'intérieur.</h2>
+        <p>Nous avons construit notre expérience dans des environnements où les sujets humains, techniques et business sont impossibles à séparer.</p>
+        <p class="diff"><b>Notre différence&nbsp;:</b> un tiers externe, humain et terrain, qui facilite, alerte et traduit. Sans faire à la place de l'entreprise, et sans jargon inutile.</p>
+        <div class="founders">
+          <div class="founder"><span class="avatar" aria-hidden="true">SA</span><span>Shirley Almosni Chiche</span></div>
+          <div class="founder"><span class="avatar" aria-hidden="true">CN</span><span>Coralie Nohel</span></div>
+        </div>
+      </div>
+      <div class="moments" aria-label="Ce que nous avons vu">
+        <div class="moment"><span class="q">Nous savons ce qui se passe quand</span><span class="a">le recruteur disparaît après la signature.</span></div>
+        <div class="moment"><span class="q">Quand</span><span class="a">le manager n'a plus de bande passante.</span></div>
+        <div class="moment"><span class="q">Quand</span><span class="a">le poste évolue plus vite que la fiche de poste.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <div class="cta-box">
+        <div>
+          <span class="eyebrow">Vous avez recruté un profil clé&nbsp;?</span>
+          <h2 style="margin-top:14px">Sécurisons son arrivée avant le premier jour.</h2>
+          <p class="lede">Un échange de cadrage de 30 minutes pour poser le périmètre, le calendrier et ce qui compte pour ce recrutement.</p>
+          <div class="cta-meta"><span>30 minutes</span><span>Sans engagement</span><span>Confidentiel</span></div>
+        </div>
+        <div class="cta-actions">
+          <div class="keyword-card">
+            <span class="label">Écrivez-nous simplement</span>
+            <span class="keyword" id="kw">PRISE DE POSTE</span>
+            <button class="copy" id="copy-kw" type="button">Copier le mot-clé</button>
+          </div>
+          <a class="btn btn-primary" id="cta-main" href="#contact">Réserver mon échange de cadrage <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Cap 90 · Conciergerie de prise de poste</span>
+    <span>Offre pilote</span>
+  </div>
+</footer>
+
+<script>
+  // Remplacez par votre lien de prise de rendez-vous (Calendly, Google Agenda…)
+  const BOOKING_URL = "";
+  if (BOOKING_URL) document.querySelectorAll('a[href="#contact"]').forEach(a => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; });
+
+  const btn = document.getElementById("copy-kw");
+  btn.addEventListener("click", () => {
+    const done = () => { btn.textContent = "Copié"; setTimeout(() => btn.textContent = "Copier le mot-clé", 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("kw")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Sélectionné, faites Ctrl+C"; };
+    try { navigator.clipboard.writeText("PRISE DE POSTE").then(done, fallback); } catch (e) { fallback(); }
+  });
+</script>
+
+</body>
+</html>
