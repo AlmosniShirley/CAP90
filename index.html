@@ -250,8 +250,9 @@ header.site .btn { padding: 11px 18px; font-size: 15px; }
 .founder span { font-weight: 600; color: var(--band-ink); }
 a.founder { text-decoration: none; border-radius: 999px; padding-right: 6px; }
 .founder .who { display: grid; gap: 2px; }
-.founder .li { font-size: 13px; font-weight: 500; color: var(--band-muted); }
-a.founder:hover .li { color: var(--orange); }
+.founder .li { justify-self: start; font-size: 13px; font-weight: 600; color: var(--band-ink); padding: 4px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--band-ink) 35%, transparent); margin-top: 4px; }
+a.founder:hover .li { border-color: var(--orange); color: var(--orange); }
+.founders { gap: 24px; }
 @media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; } }
 
 /* Final CTA */
@@ -264,7 +265,7 @@ a.founder:hover .li { color: var(--orange); }
 .cta-box .lede { margin-top: 14px; }
 .keyword-card { background: var(--bg); border: 1px dashed var(--teal); border-radius: 16px; padding: 24px; display: grid; gap: 14px; }
 .keyword-card .label { font-size: 15px; color: var(--muted); }
-.keyword { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 800; font-size: 24px; letter-spacing: 0.02em; color: var(--teal); user-select: all; }
+.keyword { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 800; font-size: 18px; letter-spacing: 0.03em; color: var(--teal); user-select: all; }
 .copy { font: 600 14px/1 var(--font-body); padding: 10px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; width: fit-content; }
 .copy:hover { border-color: var(--ink); }
 .cta-actions { display: grid; gap: 12px; }
@@ -284,7 +285,7 @@ a.founder:hover .li { color: var(--orange); }
 .sos { display: grid; gap: 8px; padding: 16px 18px; border-radius: 14px; background: var(--orange-soft); }
 .sos-q { font-weight: 600; font-size: 15px; color: var(--ink); }
 .sos-line { font-size: 15px; color: var(--muted); }
-.sos-kw { display: block; font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 800; font-size: 24px; letter-spacing: 0.02em; color: var(--orange); user-select: all; }
+.sos-kw { display: block; font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 800; font-size: 18px; letter-spacing: 0.03em; color: var(--orange); user-select: all; }
 .kw-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 a.copy { text-decoration: none; display: inline-flex; align-items: center; }
 .copy.send { background: var(--teal); border-color: var(--teal); color: #fff; }
@@ -556,8 +557,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p>Nous avons construit notre expérience dans des environnements où les sujets humains, techniques et business sont impossibles à séparer.</p>
         <p class="diff"><b>Notre différence&nbsp;:</b> un tiers externe, humain et terrain, qui facilite, alerte et traduit. Sans faire à la place de l'entreprise, et sans jargon inutile.</p>
         <div class="founders">
-          <a class="founder" href="https://www.linkedin.com/in/shirley-almosni-chiche/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">SA</span><span class="who"><span>Shirley Almosni Chiche</span><span class="li">Voir le profil LinkedIn ↗</span></span></a>
-          <a class="founder" href="https://www.linkedin.com/in/coralienohel/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">CN</span><span class="who"><span>Coralie Nohel</span><span class="li">Voir le profil LinkedIn ↗</span></span></a>
+          <a class="founder" href="https://www.linkedin.com/in/shirley-almosni-chiche/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">SA</span><span class="who"><span>Shirley Almosni Chiche</span><span class="li">Profil LinkedIn ↗</span></span></a>
+          <a class="founder" href="https://www.linkedin.com/in/coralienohel/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">CN</span><span class="who"><span>Coralie Nohel</span><span class="li">Profil LinkedIn ↗</span></span></a>
         </div>
       </div>
       <div class="moments" aria-label="Ce que nous avons vu">
