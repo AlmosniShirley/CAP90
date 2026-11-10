@@ -483,6 +483,15 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
 .offer-card.relais-card:hover { border-color: var(--ink); }
 @media (max-width: 960px) { .offers2 { grid-template-columns: 1fr; } }
 
+.relais-block { margin-top: clamp(32px, 4vw, 44px); display: grid; gap: 14px; }
+.relais-block h3 { font-size: 21px; }
+.relais-two { grid-template-columns: 1fr 1fr; gap: 20px 48px; align-items: start; }
+.format-box { display: grid; gap: 14px; padding: 22px 24px; border-radius: 14px; background: var(--teal-soft); }
+.conf-text { display: grid; gap: 12px; }
+.conf-text p { color: var(--muted); font-size: 16px; line-height: 1.55; }
+@media (max-width: 860px) { .relais-two { grid-template-columns: 1fr; } }
+.relais .brief-list { font-size: 16px; }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -701,7 +710,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
     </div>
   </section>
 
-  <section id="relais" class="relais">
+  <section id="relais" class="prevention relais">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Extension facultative · Après J90</span>
@@ -713,35 +722,35 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
         <p>CAP90 Relais prolonge l'espace de confiance avec un interlocuteur externe, neutre et expérimenté. La personne accompagnée peut prendre du recul sur sa situation, tandis que l'entreprise bénéficie d'une lecture régulière des signaux qui méritent d'être traités.</p>
         <p>L'objectif n'est pas de surveiller la relation de travail ni de décider à la place du manager. Il s'agit de faire émerger les sujets suffisamment tôt pour qu'ils puissent encore être traités.</p>
       </div>
-      <div class="relais-grid">
-        <div class="card">
-          <h3>Pour qui&nbsp;?</h3>
-          <p class="card-intro">Cette offre peut être pertinente lorsque&nbsp;:</p>
-          <ul class="brief-list one-col">
-            <li>la personne occupe un poste clé ou difficile à remplacer&nbsp;;</li>
-            <li>le manager souhaite disposer d'un regard externe sans créer une nouvelle fonction RH&nbsp;;</li>
-            <li>l'entreprise traverse une phase de croissance, de transformation ou de réorganisation&nbsp;;</li>
-            <li>le poste ou les responsabilités continuent d'évoluer après l'arrivée&nbsp;;</li>
-            <li>les signaux faibles sont difficiles à faire remonter en interne&nbsp;;</li>
-            <li>l'entreprise veut maintenir un espace de recul sans attendre qu'une situation devienne critique.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Ce que comprend CAP90 Relais</h3>
-          <ul class="brief-list one-col">
-            <li>Un entretien confidentiel régulier avec la personne accompagnée</li>
-            <li>Un espace pour prendre du recul sur le poste, les priorités, les relations de travail et les évolutions de l'environnement</li>
-            <li>L'identification des irritants, tensions ou écarts qui nécessitent une attention</li>
-            <li>Une remontée synthétique et non nominative des tendances importantes</li>
-            <li>Une alerte lorsque la situation nécessite un arbitrage ou une décision</li>
-            <li>Un point de suivi avec le sponsor défini au démarrage</li>
-            <li>Des recommandations concrètes lorsque des ajustements sont nécessaires</li>
-          </ul>
-        </div>
-        <div class="card format">
+      <div class="relais-block">
+        <h3>Pour qui&nbsp;?</h3>
+        <p class="card-intro">Cette offre peut être pertinente lorsque&nbsp;:</p>
+        <ul class="brief-list">
+          <li>La personne occupe un poste clé ou difficile à remplacer</li>
+          <li>Le manager souhaite disposer d'un regard externe sans créer une nouvelle fonction RH</li>
+          <li>L'entreprise traverse une phase de croissance, de transformation ou de réorganisation</li>
+          <li>Le poste ou les responsabilités continuent d'évoluer après l'arrivée</li>
+          <li>Les signaux faibles sont difficiles à faire remonter en interne</li>
+          <li>L'entreprise veut maintenir un espace de recul sans attendre qu'une situation devienne critique</li>
+        </ul>
+      </div>
+      <div class="relais-block">
+        <h3>Ce que comprend CAP90 Relais</h3>
+        <ul class="brief-list">
+          <li>Un entretien confidentiel régulier avec la personne accompagnée</li>
+          <li>Un espace pour prendre du recul sur le poste, les priorités, les relations de travail et les évolutions de l'environnement</li>
+          <li>L'identification des irritants, tensions ou écarts qui nécessitent une attention</li>
+          <li>Une remontée synthétique et non nominative des tendances importantes</li>
+          <li>Une alerte lorsque la situation nécessite un arbitrage ou une décision</li>
+          <li>Un point de suivi avec le sponsor défini au démarrage</li>
+          <li>Des recommandations concrètes lorsque des ajustements sont nécessaires</li>
+        </ul>
+      </div>
+      <div class="relais-block relais-two">
+        <div class="format-box">
           <span class="tag-inline">Format à valider</span>
-          <h3>Format recommandé&nbsp;: accompagnement de 3 mois, renouvelable</h3>
-          <ul class="checks">
+          <h3>Format recommandé&nbsp;: 3 mois, renouvelable</h3>
+          <ul class="brief-list one-col">
             <li>1 entretien confidentiel mensuel avec la personne accompagnée</li>
             <li>1 point de synthèse avec le sponsor de l'accompagnement</li>
             <li>Une alerte ponctuelle si un sujet important nécessite une décision</li>
@@ -749,7 +758,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
           </ul>
           <p class="format-price"><span class="ph-inline">[PRIX CAP90 RELAIS À RENSEIGNER]</span> · forfait mensuel ou forfait de 3 mois, pas de tarif horaire</p>
         </div>
-        <div class="card">
+        <div class="conf-text">
           <h3>Un cadre de confidentialité explicite</h3>
           <p>Les échanges individuels restent confidentiels. Aucun verbatim n'est transmis à l'entreprise.</p>
           <p>Nous partageons uniquement les tendances, les risques et les sujets qui nécessitent une action ou un arbitrage.</p>
