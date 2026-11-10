@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315233b'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23ffffff' text-anchor='middle'%3E90%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="Cap 90 · Conciergerie de prise de poste">
-<meta property="og:description" content="Sécuriser les 90 premiers jours de vos profils clés.">
-<title>Conciergerie de prise de poste</title>
-<meta name="description" content="Cap 90 sécurise les 90 premiers jours de vos profils clés : préparation de l'arrivée, suivi à 15, 30, 60 et 90 jours, détection des signaux faibles.">
+<meta property="og:title" content="Cap 90 · Diagnostic de période d'essai">
+<meta property="og:description" content="Une période d'essai dérape ? En 7 à 10 jours, comprenez ce qui bloque et décidez de la suite.">
+<title>Cap 90 · Diagnostic de période d'essai</title>
+<meta name="description" content="Une période d'essai dérape ? En 7 à 10 jours, Cap 90 croise le point de vue de l'entreprise et de la personne recrutée, identifie les écarts et vous aide à décider : réparer, recadrer, réorganiser ou arrêter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
@@ -116,7 +116,7 @@ header.site .btn { padding: 11px 18px; font-size: 15px; }
   font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
 }
 .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
-.hero h1 { font-size: clamp(42px, 7.4vw, 92px); font-weight: 800; letter-spacing: -0.035em; max-width: 14ch; }
+.hero h1 { font-size: clamp(34px, 5.4vw, 66px); font-weight: 800; letter-spacing: -0.03em; max-width: 21ch; }
 .hero h1 em { font-style: normal; color: var(--teal); }
 .hero .lede { max-width: 56ch; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -332,6 +332,118 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .hero-grid > *:nth-child(3) { animation-delay: .1s; }
 .hero-grid > *:nth-child(4) { animation-delay: .15s; }
 .track { animation-delay: .22s; }
+/* ===== Refonte CAP90 Alerte ===== */
+.hide-sm { display: inline; }
+@media (max-width: 520px) { .hide-sm { display: none; } }
+
+/* Key facts under the hero */
+.facts { margin: clamp(36px, 5vw, 52px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.fact { padding: 18px 20px 0 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.fact + .fact { padding-left: 20px; border-left: 1px solid var(--line); }
+.fact dt { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.fact dd { margin: 0; font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 600; font-size: 18px; line-height: 1.3; }
+.ph-inline { color: var(--orange); font-family: ui-monospace, Menlo, monospace; font-size: 0.8em; font-weight: 600; letter-spacing: 0; }
+@media (max-width: 860px) {
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+  .fact:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 480px) {
+  .facts { grid-template-columns: 1fr; }
+  .fact, .fact + .fact { padding: 16px 0 0; border-left: 0; }
+}
+
+/* Situations */
+.signs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 40px; }
+.signs li { position: relative; padding-left: 26px; font-size: 17px; line-height: 1.5; min-width: 0; }
+.signs li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid var(--orange); box-sizing: border-box; }
+.callout { margin-top: clamp(32px, 4vw, 44px); padding: 24px 28px; border-radius: 16px; background: var(--band); color: var(--band-ink); font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 600; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.35; max-width: 900px; text-wrap: balance; }
+@media (max-width: 760px) { .signs { grid-template-columns: 1fr; } }
+
+/* 4-phase and 6-step tracks */
+.steps.steps-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.step .title { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 700; font-size: 19px; line-height: 1.2; }
+.step ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 7px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+.step ul li { position: relative; padding-left: 14px; }
+.step ul li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 7px; height: 2px; background: var(--teal); }
+@media (max-width: 760px) {
+  .steps.steps-4 { grid-template-columns: 1fr; }
+  .step > *:not(.node) { grid-column: 2; }
+  .step .node { grid-row: 1 / span 3; }
+}
+
+/* Outcomes */
+.outcomes-head { margin: clamp(32px, 4vw, 44px) 0 16px; }
+.outcomes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.outcome { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.outcome b { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-size: 19px; color: var(--teal); }
+.outcome span { font-size: 15px; color: var(--muted); line-height: 1.45; }
+@media (max-width: 860px) { .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .outcomes { grid-template-columns: 1fr; } }
+
+/* Deliverables */
+.deliv { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.deliv li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 18px 50px; position: relative; font-weight: 600; font-size: 16px; line-height: 1.4; min-width: 0; }
+.deliv li::before { content: ""; position: absolute; left: 18px; top: 19px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--teal-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7a72' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat; }
+@media (max-width: 860px) { .deliv { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .deliv { grid-template-columns: 1fr; } }
+
+/* Confidentiality */
+.conf { padding-top: 0; }
+.conf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.nots { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.nots li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+.nots li::before { content: "✕"; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%; background: var(--orange-soft); color: var(--orange); font-size: 12px; font-weight: 800; display: grid; place-items: center; line-height: 1; }
+.todo { border: 2px dashed var(--orange); border-radius: 12px; padding: 14px 16px; background: var(--orange-soft); display: grid; gap: 6px; }
+.todo .tag { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); }
+.todo p { font-size: 15px; line-height: 1.5; }
+@media (max-width: 760px) { .conf-grid { grid-template-columns: 1fr; } }
+
+/* Limits + frame */
+#limites { padding-top: 0; }
+.limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+.limits-grid .card { gap: 18px; }
+.role { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 600; font-size: 18px; line-height: 1.4; padding-top: 16px; border-top: 1px solid var(--line); }
+.frame-title { font-size: clamp(24px, 2.8vw, 30px); }
+@media (max-width: 860px) { .limits-grid { grid-template-columns: 1fr; } }
+
+/* Pricing */
+.tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tier { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); display: grid; gap: 14px; align-content: start; min-width: 0; }
+.tier.main { border: 2px solid var(--teal); }
+.tier-name { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.price { font-family: var(--font-display); font-variant-ligatures: no-common-ligatures; font-weight: 700; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; }
+.tier p { color: var(--muted); }
+.tier-note { margin-top: 18px; font-size: 15px; color: var(--muted); }
+@media (max-width: 760px) { .tiers { grid-template-columns: 1fr; } }
+
+/* Proof placeholders + public references */
+.ph-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px; }
+.ph { border: 2px dashed var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.ph b { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--orange); overflow-wrap: anywhere; }
+.ph span { font-size: 15px; color: var(--muted); }
+.refs-head { margin: clamp(40px, 5vw, 56px) 0 8px; }
+.refs-head h3 { font-size: 18px; color: var(--muted); }
+.refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.refs .num { font-size: clamp(32px, 3.6vw, 42px); color: var(--teal); }
+@media (max-width: 860px) { .refs { grid-template-columns: 1fr; } }
+
+/* Prevention (secondary) */
+.prevention { background: var(--surface); border-block: 1px solid var(--line); }
+.prevention .eyebrow { color: var(--muted); }
+.prev-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: start; }
+.prev-cta { margin-top: 24px; }
+.table-wrap { overflow-x: auto; min-width: 0; }
+.sit-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.sit-table th, .sit-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.sit-table th { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.sit-table td b { color: var(--teal); font-weight: 700; }
+.sit-table tbody tr:first-child td b { color: var(--orange); }
+@media (max-width: 860px) { .prev-grid { grid-template-columns: 1fr; } }
+
+/* Contact */
+.mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
+.cta-actions .btn-ghost { justify-content: center; }
 </style>
 </head>
 <body>
@@ -340,13 +452,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Cap 90, retour en haut"><span class="brand-mark">90</span>Cap 90</a>
     <nav class="links" aria-label="Sections">
-      <a href="#probleme">Le problème</a>
-      <a href="#chiffres">Les chiffres</a>
-      <a href="#offre">L'offre</a>
-      <a href="#impact">L'impact</a>
+      <a href="#situations">Situations</a>
+      <a href="#alerte">Le diagnostic</a>
+      <a href="#livrables">Livrables</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#prevention">Prévention</a>
       <a href="#nous">Qui sommes-nous</a>
     </nav>
-    <a class="btn btn-primary" href="#contact">Réserver 30 min</a>
+    <a class="btn btn-primary" data-mail="alerte" href="#contact">Analyser<span class="hide-sm">&nbsp;une période d'essai</span></a>
   </div>
 </header>
 
@@ -354,207 +467,237 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
-        <span class="pill"><span class="dot"></span>Offre pilote · Conciergerie de prise de poste</span>
-        <h1>Un recrutement ne se gagne pas à <em>la signature.</em></h1>
-        <p class="lede">Nous sécurisons les 90 premiers jours de vos profils clés. Pour les ESN et scale-ups où la même personne porte déjà la RH, le management, l'administratif et l'expérience collaborateur.</p>
+        <span class="pill"><span class="dot"></span>ESN et scale-ups · Période d'essai en difficulté</span>
+        <h1>Une période d'essai dérape&nbsp;? <em>Comprenez ce qui bloque</em> avant de prendre une mauvaise décision.</h1>
+        <p class="lede">En 7 à 10 jours, nous croisons le point de vue de l'entreprise et celui de la personne recrutée, identifions les écarts entre le poste promis et le poste vécu, puis vous aidons à décider&nbsp;: réparer, recadrer, réorganiser ou arrêter.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#contact">Planifier un échange de cadrage <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="#offre">Voir le déroulé</a>
+          <a class="btn btn-primary" data-mail="alerte" href="#contact">Analyser une période d'essai <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#prevention">Découvrir l'accompagnement préventif</a>
         </div>
       </div>
+      <dl class="facts">
+        <div class="fact"><dt>Pour qui</dt><dd>Dirigeants, managers et RH d'ESN et de scale-ups</dd></div>
+        <div class="fact"><dt>Quand nous appeler</dt><dd>Pendant une période d'essai qui inquiète, avant de trancher</dd></div>
+        <div class="fact"><dt>Durée</dt><dd>7 à 10 jours, restitution comprise</dd></div>
+        <div class="fact"><dt>Prix</dt><dd>À partir de <span class="ph-inline">[TARIF À RENSEIGNER]</span>&nbsp;€&nbsp;HT</dd></div>
+      </dl>
+    </div>
+  </section>
 
-      <div class="track" aria-label="Déroulé de l'accompagnement, du brief et diagnostic au 90e jour">
-        <div class="track-head">
-          <strong>Du diagnostic au jour 90</strong>
-        </div>
-        <ol class="steps">
-          <li class="step brief"><span class="node"></span><span class="when">En amont</span><span class="what">Brief, audit et diagnostic&nbsp;: attentes, objectifs et poste tel qu'il sera vraiment</span></li>
-          <li class="step sig"><span class="node"></span><span class="when">Signature</span><span class="what">Attentes clarifiées, matériel, accès et premières rencontres préparés</span></li>
-          <li class="step"><span class="node"></span><span class="when">J0</span><span class="what">Arrivée préparée, feuille de route en main</span></li>
-          <li class="step"><span class="node"></span><span class="when">J15</span><span class="what">Premier point&nbsp;: réalité vécue</span></li>
-          <li class="step"><span class="node"></span><span class="when">J30</span><span class="what">Mises en relation, premiers irritants</span></li>
-          <li class="step"><span class="node"></span><span class="when">J60</span><span class="what">Autonomie, écarts poste promis / vécu</span></li>
-          <li class="step"><span class="node"></span><span class="when">J90</span><span class="what">Bilan et points de décision</span></li>
+  <section id="situations">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Vous reconnaissez-vous&nbsp;?</span>
+        <h2>Quand personne ne sait vraiment pourquoi ça ne fonctionne pas</h2>
+      </div>
+      <ul class="signs">
+        <li>La personne recrutée ne comprend toujours pas clairement ses priorités.</li>
+        <li>Le manager dit que «&nbsp;ça ne prend pas&nbsp;», sans parvenir à formuler précisément pourquoi.</li>
+        <li>Le poste réellement disponible ne correspond pas complètement à ce qui a été vendu.</li>
+        <li>Les objectifs changent ou restent flous.</li>
+        <li>La personne recrutée semble en retrait, mais personne ne sait si elle doute du poste, du management ou de l'entreprise.</li>
+        <li>Une rupture de période d'essai est évoquée, mais la décision repose surtout sur des impressions.</li>
+        <li>Les échanges deviennent évitants ou tendus.</li>
+      </ul>
+      <p class="callout">Quand les perceptions s'opposent et que les faits restent flous, la décision devient souvent émotionnelle. Nous intervenons pour rendre la situation lisible et actionnable.</p>
+    </div>
+  </section>
+
+  <section id="alerte" class="offer">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">CAP90 Alerte · Diagnostic de période d'essai</span>
+        <h2>Un diagnostic court pour décider de la suite</h2>
+        <p class="lede">Un diagnostic externe, factuel et confidentiel pour comprendre ce qui bloque et décider de la suite. Il dure 7 à 10 jours, pas 90.</p>
+      </div>
+      <div class="track">
+        <ol class="steps steps-4">
+          <li class="step brief"><span class="node"></span><span class="when">Jours 1 à 2</span><span class="title">Cadrage</span>
+            <ul><li>Compréhension du poste et de son contexte</li><li>Clarification des attentes initiales</li><li>Identification des personnes à entendre</li><li>Définition de la question à résoudre</li></ul></li>
+          <li class="step"><span class="node"></span><span class="when">Jours 3 à 5</span><span class="title">Entretiens</span>
+            <ul><li>Échange avec le manager</li><li>Échange avec la personne recrutée</li><li>Échanges complémentaires si nécessaire</li><li>Analyse des écarts entre la promesse, les moyens et la réalité</li></ul></li>
+          <li class="step"><span class="node"></span><span class="when">Jours 6 à 8</span><span class="title">Analyse</span>
+            <ul><li>Identification des causes principales</li><li>Problème de personne, de poste, de management ou d'organisation&nbsp;?</li><li>Hiérarchisation des risques</li><li>Ce qui peut encore être corrigé</li></ul></li>
+          <li class="step sig"><span class="node"></span><span class="when">Jours 9 à 10</span><span class="title">Restitution et décision</span>
+            <ul><li>Restitution factuelle</li><li>Points de désaccord et zones d'incertitude</li><li>Plan d'action priorisé</li><li>Recommandation sur la suite</li></ul></li>
         </ol>
-        <div class="brief-panel">
-          <div class="brief-intro">
-            <span class="phase">En amont</span>
-            <h3>Brief, audit et diagnostic</h3>
-            <p>Avant tout le reste, nous auditons le poste avec vous. Vous clarifiez&nbsp;:</p>
-          </div>
-          <ul class="brief-list">
-            <li>Pourquoi le poste existe</li>
-            <li>Ce que la personne devra réellement accomplir</li>
-            <li>Les attentes et les objectifs, posés clairement</li>
-            <li>Les moyens disponibles</li>
-            <li>Les critères de réussite</li>
-            <li>Les interfaces et le mode de décision</li>
-            <li class="gap-item">L'écart éventuel entre la promesse et la réalité</li>
-          </ul>
-        </div>
+      </div>
+      <div class="outcomes-head"><h3>Quatre issues possibles, une décision argumentée</h3></div>
+      <div class="outcomes">
+        <div class="outcome"><b>Réparer</b><span>Corriger ce qui bloque, avec la même personne et le même poste.</span></div>
+        <div class="outcome"><b>Recadrer</b><span>Reposer les priorités, les attentes et les critères de réussite.</span></div>
+        <div class="outcome"><b>Réorganiser</b><span>Ajuster le périmètre du poste, les moyens ou le management.</span></div>
+        <div class="outcome"><b>Arrêter</b><span>Mettre fin à la période d'essai sur des faits, pas sur des impressions.</span></div>
       </div>
     </div>
   </section>
 
-  <section id="probleme">
+  <section id="livrables">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Le problème</span>
-        <h2>Entre la signature et la prise de poste, personne ne tient vraiment l'ensemble du sujet.</h2>
-        <p class="lede">Le matériel, les accès, les bonnes rencontres, les attentes et les signaux faibles sont traités trop tard, ou pas du tout.</p>
+        <span class="eyebrow">Ce que vous recevez</span>
+        <h2>Ce que vous clarifiez</h2>
       </div>
-      <div class="problem-grid">
+      <ul class="deliv">
+        <li>Une synthèse de la situation</li>
+        <li>Une cartographie des écarts entre poste promis et poste vécu</li>
+        <li>Les facteurs de risque identifiés</li>
+        <li>Les responsabilités et points de blocage</li>
+        <li>Les sujets à traiter en priorité</li>
+        <li>Un plan d'action sur 30 jours</li>
+        <li>Une recommandation de décision</li>
+        <li>Un échange de restitution avec les décideurs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="confidentialite" class="conf">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Confidentialité</span>
+        <h2>Ce qui reste entre nous, et ce qui vous est transmis</h2>
+        <p class="lede">Les entretiens sont confidentiels. Nous ne transmettons pas de verbatim ni d'attribution automatique des propos. Nous restituons les faits, les écarts, les risques et les points nécessitant un arbitrage.</p>
+      </div>
+      <div class="conf-grid">
         <div class="card">
-          <h3>Vous êtes concerné si…</h3>
+          <h3>Ce que l'entreprise reçoit</h3>
           <ul class="checks">
-            <li>Vous venez de recruter un profil clé.</li>
-            <li>Vos managers sont déjà saturés.</li>
-            <li>Vous n'avez pas de RH ou d'office manager dédié.</li>
-            <li>Vous voulez éviter une rupture de période d'essai ou un départ précoce.</li>
+            <li>Les faits établis</li>
+            <li>Les écarts entre promesse, moyens et réalité</li>
+            <li>Les risques identifiés</li>
+            <li>Les points qui demandent un arbitrage</li>
           </ul>
         </div>
-        <div class="card risk">
-          <h3>Le risque caché</h3>
-          <p>Un poste mal compris, une promesse décalée ou une arrivée mal préparée peuvent coûter cher.</p>
-          <div class="risk-cost">
-            <div><span>Plusieurs mois de travail</span><b>perdus</b></div>
-            <div><span>Votre crédibilité</span><b>entamée</b></div>
-            <div><span>Une campagne de recrutement</span><b>à relancer</b></div>
+        <div class="card">
+          <h3>Ce que nous ne transmettons pas</h3>
+          <ul class="nots">
+            <li>Les verbatims des entretiens</li>
+            <li>L'attribution automatique d'un propos à une personne</li>
+          </ul>
+          <div class="todo">
+            <span class="tag">À valider</span>
+            <p>Toute remontée nominative ou tout partage d'un propos identifiable fait l'objet d'un accord préalable, sauf exception expressément définie dans le cadre de mission.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="chiffres" class="figures">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Les chiffres</span>
-        <h2>Une intégration ratée coûte cher, et longtemps.</h2>
-        <p class="lede">Ce que disent les études sur l'arrivée des nouveaux collaborateurs.</p>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-group">
-          <span class="phase">L'onboarding aujourd'hui</span>
-          <div class="stat">
-            <span class="num">12&nbsp;%</span>
-            <span class="txt">des salariés estiment que leur entreprise fait un excellent travail d'intégration.</span>
-            <span class="src"><a href="https://www.gallup.com/workplace/247172/problems-onboarding-program.aspx" target="_blank" rel="noopener">Gallup</a></span>
-          </div>
-          <div class="stat">
-            <span class="num">29&nbsp;%</span>
-            <span class="txt">seulement des nouveaux arrivants se sentent pleinement préparés et soutenus pour réussir dans leur poste.</span>
-            <span class="src"><a href="https://www.gallup.com/file/workplace/247076/Gallup_Perspective_on_Creating_an_Exceptional_Onboarding_Journey_for_Your_New_Employees.pdf" target="_blank" rel="noopener">Gallup, 2019</a></span>
-          </div>
-        </div>
-        <div class="stat-group cost">
-          <span class="phase">Le coût d'un raté</span>
-          <div class="stat">
-            <span class="num">36&nbsp;%</span>
-            <span class="txt">des CDI sont rompus avant la fin de la première année, dont 12,7&nbsp;% en fin de période d'essai.</span>
-            <span class="src"><a href="https://www.legisocial.fr/actualites-sociales/1353-plus-dun-tiers-des-cdi-sont-rompus-avant-un.html" target="_blank" rel="noopener">DARES, 2015 (CDI signés en 2011)</a></span>
-          </div>
-          <div class="stat">
-            <span class="num">20 à 200<small>&nbsp;k€</small></span>
-            <span class="txt">le coût estimé d'un recrutement raté, selon la taille de l'entreprise et le poste.</span>
-            <span class="src"><a href="https://www.entreprises.cci-paris-idf.fr/web/rh/recrutement-rate-quelles-consequences-et-comment-l-eviter" target="_blank" rel="noopener">CCI Paris Île-de-France</a></span>
-          </div>
-        </div>
-        <div class="stat-group">
-          <span class="phase">Le temps perdu</span>
-          <div class="stat">
-            <span class="num">11<small>&nbsp;semaines</small></span>
-            <span class="txt">en moyenne pour recruter un cadre. Autant de temps à repartir de zéro après un départ.</span>
-            <span class="src"><a href="https://corporate.apec.fr/files/live/sites/corporate/files/Nos%20%C3%A9tudes/pdf/pratiques-de-recrutements-des-cadres-2022" target="_blank" rel="noopener">Apec, 2022</a></span>
-          </div>
-          <div class="stat">
-            <span class="num">12<small>&nbsp;mois</small></span>
-            <span class="txt">c'est le temps qu'il peut falloir à un nouvel arrivant pour atteindre sa pleine performance.</span>
-            <span class="src"><a href="https://www.gallup.com/file/workplace/247076/Gallup_Perspective_on_Creating_an_Exceptional_Onboarding_Journey_for_Your_New_Employees.pdf" target="_blank" rel="noopener">Gallup, 2019</a></span>
-          </div>
-        </div>
-      </div>
-      <div class="figures-close">
-        <p>Les 90 premiers jours décident de la suite. Autant les préparer.</p>
-        <a class="btn btn-ghost" href="#offre">Voir comment nous les sécurisons <span class="arrow" aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="offre" class="offer">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">L'offre</span>
-        <h2>Nous préparons, facilitons et suivons les premières semaines de la personne recrutée.</h2>
-        <p class="not-replace">Nous ne remplaçons <b>ni la RH ni le manager</b>. Nous prenons en charge ce qui tombe entre les deux quand personne n'a le temps de le tenir correctement.</p>
-      </div>
-      <div class="pillars">
-        <div class="pillar upstream">
-          <span class="phase">En amont</span>
-          <h3>Brief, audit et diagnostic du poste</h3>
-          <ul>
-            <li>Pourquoi le poste existe</li>
-            <li>Attentes, objectifs et critères de réussite</li>
-            <li>Moyens, interfaces et mode de décision</li>
-            <li>L'écart éventuel entre la promesse et la réalité</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <span class="phase">Avant l'arrivée</span>
-          <h3>Une arrivée prête dès le premier jour</h3>
-          <ul>
-            <li>Clarification des attentes</li>
-            <li>Vérification du matériel et des accès</li>
-            <li>Préparation des premières rencontres</li>
-            <li>Informations utiles et feuille de route de prise de poste</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <span class="phase">Pendant les 90 jours</span>
-          <h3>Un suivi régulier, à J15, J30, J60 et J90</h3>
-          <ul>
-            <li>Écoute de la réalité vécue</li>
-            <li>Facilitation des mises en relation</li>
-            <li>Aide à la montée en autonomie</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <span class="phase">Signaux faibles</span>
-          <h3>Un sas de confidences</h3>
-          <p class="sas">Un espace neutre pour la personne recrutée&nbsp;: <b>entretiens confidentiels, analyse des écarts et facilitation d'une décision</b>. Les alertes remontent avant le départ.</p>
-          <ul>
-            <li>Détection des écarts entre poste promis et poste vécu</li>
-            <li>Remontée anonymisée des irritants</li>
-            <li>Alerte sur les sujets qui demandent une décision</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="impact">
-    <div class="wrap impact-grid">
-      <div>
-        <div class="section-head">
-          <span class="eyebrow">L'impact</span>
-          <h2>Ce que vous sécurisez</h2>
-        </div>
-        <ul class="gains">
-          <li>Une arrivée préparée et cohérente avec la promesse faite.</li>
-          <li>Moins de charge mentale pour les fondateurs et les managers.</li>
-          <li>Une montée en autonomie plus lisible.</li>
-          <li>Des irritants détectés avant qu'ils ne deviennent des départs.</li>
+  <section id="limites">
+    <div class="wrap limits-grid">
+      <div class="card">
+        <span class="eyebrow">Ce que nous ne faisons pas</span>
+        <ul class="nots">
+          <li>Nous ne décidons pas à la place de l'entreprise.</li>
+          <li>Nous ne cherchons pas à sauver la période d'essai à tout prix.</li>
+          <li>Nous ne menons pas une enquête à charge contre le manager ou la personne recrutée.</li>
+          <li>Nous ne remplaçons pas un conseil juridique ou un conseil en droit social.</li>
+          <li>Nous ne faisons pas de thérapie ni de coaching de performance déguisé.</li>
+          <li>Nous ne garantissons pas le maintien de la personne dans l'entreprise.</li>
         </ul>
+        <p class="role">Notre rôle est de rendre les faits, les écarts et les options suffisamment clairs pour permettre une décision responsable.</p>
       </div>
       <div class="frame">
         <span class="eyebrow">Notre cadre</span>
+        <h2 class="frame-title">Un cadre précis, sans promesse magique</h2>
         <ul class="checks">
-          <li>Périmètre, fréquence, livrables et prix définis avant le démarrage.</li>
-          <li>Confidentialité clarifiée dès le premier échange.</li>
+          <li>Périmètre, délai, livrables et prix validés avant le démarrage.</li>
+          <li>Règles de confidentialité écrites dans le cadre de mission.</li>
           <li>Pas de checklist décorative&nbsp;: des points de décision et des actions.</li>
           <li>L'entreprise reste responsable du management et des arbitrages.</li>
-          <li>Nous ne cherchons pas automatiquement à sauver la période d'essai. Nous cherchons à comprendre rapidement si la situation est réparable, à quelles conditions et avec quel niveau d'engagement de chaque partie.</li>
+          <li>Nous cherchons à comprendre rapidement si la situation est réparable, à quelles conditions et avec quel niveau d'engagement de chaque partie.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarifs" class="offer">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Tarifs</span>
+        <h2>Un prix pour un résultat cadré, pas pour du temps passé</h2>
+        <p class="lede">Le prix dépend du nombre d'interlocuteurs, de la complexité de la situation et du niveau de suivi nécessaire. Le périmètre, les livrables et le prix sont validés avant le démarrage.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <span class="tier-name">Diagnostic</span>
+          <span class="price">À partir de <span class="ph-inline">[TARIF À RENSEIGNER]</span>&nbsp;€&nbsp;HT</span>
+          <p>Analyse et restitution, en 7 à 10 jours.</p>
+          <ul class="checks"><li>Cadrage, entretiens et analyse</li><li>Livrables complets</li><li>Échange de restitution avec les décideurs</li></ul>
+        </div>
+        <div class="tier main">
+          <span class="tier-name">Diagnostic + remise sur les rails</span>
+          <span class="price">À partir de <span class="ph-inline">[TARIF À RENSEIGNER]</span>&nbsp;€&nbsp;HT</span>
+          <p>Analyse, plan d'action et suivi sur 30 jours.</p>
+          <ul class="checks"><li>Tout le diagnostic</li><li>Mise en œuvre du plan d'action sur 30 jours</li><li>Points de suivi avec le manager et la personne recrutée</li></ul>
+        </div>
+      </div>
+      <p class="tier-note">Pas de prix horaire. Le devis est envoyé après un premier échange de 30 minutes, sans engagement.</p>
+    </div>
+  </section>
+
+  <section id="preuves">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Exemples</span>
+        <h2>À quoi ressemble un diagnostic</h2>
+      </div>
+      <div class="ph-grid">
+        <div class="ph"><b>[AJOUTER ICI UN CAS CLIENT OU UN EXEMPLE ANONYMISÉ]</b><span>Situation de départ, ce que le diagnostic a montré, décision prise.</span></div>
+        <div class="ph"><b>[AJOUTER ICI UN EXEMPLE DE SITUATION ANALYSÉE]</b><span>Les écarts identifiés entre poste promis et poste vécu.</span></div>
+        <div class="ph"><b>[AJOUTER ICI UN TÉMOIGNAGE]</b><span>Dirigeant, manager ou RH, avec son accord.</span></div>
+        <div class="ph"><b>[AJOUTER ICI UN EXTRAIT ANONYMISÉ DE LIVRABLE]</b><span>Par exemple une page de la cartographie des écarts.</span></div>
+        <div class="ph"><b>[AJOUTER ICI UN INDICATEUR DE RÉSULTAT]</b><span>Uniquement un chiffre mesuré sur vos missions.</span></div>
+      </div>
+      <div class="refs-head"><h3>Quelques repères publics</h3></div>
+      <div class="refs">
+        <div class="stat">
+          <span class="num">12,7&nbsp;%</span>
+          <span class="txt">des CDI sont rompus en fin de période d'essai dans l'année qui suit leur signature (36&nbsp;% sont rompus avant un an, tous motifs confondus).</span>
+          <span class="src"><a href="https://www.legisocial.fr/actualites-sociales/1353-plus-dun-tiers-des-cdi-sont-rompus-avant-un.html" target="_blank" rel="noopener">DARES, étude publiée en 2015 sur les CDI signés en 2011, France</a></span>
+        </div>
+        <div class="stat">
+          <span class="num">11<small>&nbsp;semaines</small></span>
+          <span class="txt">en moyenne pour recruter un cadre. C'est le délai à prévoir pour remplacer une personne qui part.</span>
+          <span class="src"><a href="https://corporate.apec.fr/files/live/sites/corporate/files/Nos%20%C3%A9tudes/pdf/pratiques-de-recrutements-des-cadres-2022" target="_blank" rel="noopener">Apec, Pratiques de recrutement des cadres, 2022 (données 2021), France</a></span>
+        </div>
+        <div class="stat">
+          <span class="num">12<small>&nbsp;mois</small></span>
+          <span class="txt">peuvent être nécessaires à un nouvel arrivant pour atteindre sa pleine performance.</span>
+          <span class="src"><a href="https://www.gallup.com/file/workplace/247076/Gallup_Perspective_on_Creating_an_Exceptional_Onboarding_Journey_for_Your_New_Employees.pdf" target="_blank" rel="noopener">Gallup, 2019, études menées principalement aux États-Unis</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prevention" class="prevention">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Autre situation</span>
+        <h2>CAP90 Prévention · Préparer les 90 premiers jours</h2>
+        <p class="lede">Pour les entreprises qui viennent de recruter un profil clé et veulent éviter qu'une prise de poste mal préparée ne se transforme en difficulté quelques semaines plus tard.</p>
+      </div>
+      <div class="prev-grid">
+        <div>
+          <ul class="brief-list">
+            <li>Audit du poste</li>
+            <li>Clarification des attentes</li>
+            <li>Préparation du matériel et des accès</li>
+            <li>Préparation des premières rencontres</li>
+            <li>Suivi à J15, J30, J60 et J90</li>
+            <li>Détection des écarts et des irritants</li>
+          </ul>
+          <a class="btn btn-ghost prev-cta" data-mail="prevention" href="#contact">Préparer une prise de poste <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="table-wrap">
+          <table class="sit-table">
+            <thead><tr><th scope="col">Situation</th><th scope="col">Offre adaptée</th></tr></thead>
+            <tbody>
+              <tr><td>La période d'essai dérape déjà</td><td><b>CAP90 Alerte</b></td></tr>
+              <tr><td>La personne arrive prochainement</td><td><b>CAP90 Prévention</b></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -563,18 +706,20 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap why-grid">
       <div class="stack">
         <span class="eyebrow">Pourquoi nous</span>
-        <h2>Le recrutement IT et les ESN, nous les connaissons de l'intérieur.</h2>
-        <p>Nous avons construit notre expérience dans des environnements où les sujets humains, techniques et business sont impossibles à séparer.</p>
-        <p class="diff"><b>Notre différence&nbsp;:</b> un tiers externe, humain et terrain, qui facilite, alerte et traduit. Sans faire à la place de l'entreprise, et sans jargon inutile.</p>
+        <h2>Pourquoi nous sommes légitimes sur ces situations</h2>
+        <p>Nous connaissons les situations où le recrutement semblait réussi sur le papier, puis où les écarts apparaissent après l'arrivée. Notre expérience vient du recrutement IT, des ESN et des environnements en forte croissance.</p>
+        <p class="diff">Notre rôle n'est pas de prendre parti. C'est de <b>traduire les perceptions en faits, les faits en options et les options en décision.</b></p>
         <div class="founders">
           <a class="founder" href="https://www.linkedin.com/in/shirley-almosni-chiche/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">SA</span><span class="who"><span>Shirley Almosni Chiche</span><span class="li">Profil LinkedIn ↗</span></span></a>
           <a class="founder" href="https://www.linkedin.com/in/coralienohel/" target="_blank" rel="noopener"><span class="avatar" aria-hidden="true">CN</span><span class="who"><span>Coralie Nohel</span><span class="li">Profil LinkedIn ↗</span></span></a>
         </div>
       </div>
-      <div class="moments" aria-label="Ce que nous avons vu">
-        <div class="moment"><span class="q">Nous savons ce qui se passe quand</span><span class="a">le recruteur disparaît après la signature.</span></div>
-        <div class="moment"><span class="q">Quand</span><span class="a">le manager n'a plus de bande passante.</span></div>
-        <div class="moment"><span class="q">Quand</span><span class="a">le poste évolue plus vite que la fiche de poste.</span></div>
+      <div class="moments" aria-label="Situations fréquentes">
+        <div class="moment"><span class="q">Ce que nous voyons souvent</span><span class="a">Un poste mal défini.</span></div>
+        <div class="moment"><span class="a">Des attentes contradictoires.</span></div>
+        <div class="moment"><span class="a">Un manager indisponible.</span></div>
+        <div class="moment"><span class="a">Une promesse trop ambitieuse.</span></div>
+        <div class="moment"><span class="a">Une organisation pas prête.</span></div>
       </div>
     </div>
   </section>
@@ -583,38 +728,28 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <div class="cta-box">
         <div>
-          <span class="eyebrow">Vous avez recruté un profil clé&nbsp;?</span>
-          <h2 style="margin-top:14px">Vous vous êtes dit oui. Faisons en sorte que ça dure.</h2>
-          <p class="lede">Personne n'a envie d'entendre «&nbsp;tout est fini entre nous&nbsp;» à la fin de la période d'essai. On en parle 30 minutes, avant le premier jour.</p>
-          <div class="cta-meta"><span>30 minutes</span><span>Sans engagement</span><span>Confidentiel</span></div>
+          <span class="eyebrow">Contact</span>
+          <h2 style="margin-top:14px">Parlons de la situation concrète</h2>
+          <p class="lede">Décrivez la situation en quelques lignes. Nous en parlons 30 minutes, puis nous vous disons honnêtement si un diagnostic est utile.</p>
+          <div class="cta-meta"><span>30 minutes</span><span>Sans engagement</span><span>Confidentialité posée dès le premier échange</span></div>
         </div>
         <div class="cta-actions">
-          <div class="match" role="group" aria-labelledby="match-title">
-            <span class="match-title" id="match-title">Test de compatibilité</span>
-            <label for="m1"><input type="checkbox" id="m1">Vous venez de recruter un profil clé</label>
-            <label for="m2"><input type="checkbox" id="m2">Vos managers sont déjà débordés</label>
-            <label for="m3"><input type="checkbox" id="m3">Vous ne voulez pas revivre une rupture de période d'essai</label>
-            <div class="meter" aria-hidden="true"><span id="meter-bar"></span></div>
-            <p class="match-result" id="match-result" aria-live="polite">Cochez ce qui vous ressemble.</p>
-          </div>
-          <a class="btn btn-primary" id="cta-main" href="#contact">Je réserve mon offre de cadrage <span class="arrow" aria-hidden="true">→</span></a>
-          <p class="kw-hint">Pour le plaisir, glissez un mot-clé dans votre message&nbsp;:</p>
-          <div class="kw-chips">
-            <a class="chip" id="send-kw" href="#contact"><b>PAS DE RUPTURE</b><span>Vous préparez une arrivée</span></a>
-            <a class="chip chip-sos" id="send-sos" href="#contact"><b>SOS PÉRIODE D'ESSAI</b><span>Ça tangue déjà</span></a>
-          </div>
+          <a class="btn btn-primary" data-mail="alerte" href="#contact">Analyser une période d'essai <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="mail-help">Un e-mail s'ouvre avec cinq questions&nbsp;: entreprise, poste concerné, date d'arrivée, problème observé, urgence éventuelle.</p>
+          <a class="btn btn-ghost" data-mail="prevention" href="#contact">Préparer une prise de poste</a>
         </div>
       </div>
     </div>
   </section>
+
   <section id="valeurs" class="values">
     <div class="wrap">
       <span class="eyebrow">Nos valeurs</span>
       <div class="values-grid">
-        <div class="value"><h3>Transparence</h3><p>Périmètre, prix et livrables posés avant de commencer. Ce que nous voyons, nous le disons.</p></div>
-        <div class="value"><h3>Performance</h3><p>Un profil clé autonome plus vite, et des décisions prises au bon moment.</p></div>
+        <div class="value"><h3>Transparence</h3><p>Périmètre, limites, livrables et prix posés avant de commencer. Ce que nous voyons, nous le disons.</p></div>
+        <div class="value"><h3>Performance</h3><p>Des décisions prises vite, sur des faits plutôt que sur des impressions.</p></div>
         <div class="value"><h3>Corporate hacking</h3><p>Nous trouvons les raccourcis qui font avancer, là où les process ralentissent.</p></div>
-        <div class="value"><h3>Zéro bullshit</h3><p>Pas de checklist décorative ni de jargon. Des points de décision et des actions.</p></div>
+        <div class="value"><h3>Zéro bullshit</h3><p>Pas de jargon ni de promesse magique. Des faits, des options et une décision.</p></div>
       </div>
     </div>
   </section>
@@ -622,7 +757,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <footer>
   <div class="wrap">
-    <span>© Cap 90 · Conciergerie de prise de poste</span>
+    <span>© Cap 90 · Diagnostic et prévention des périodes d'essai</span>
     <span>Offre pilote</span>
   </div>
 </footer>
@@ -631,17 +766,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   // Contact : destinataire principal et copie
   const TO = "shirley.chiche@buildrh.co", CC = "coralie@ellipse.cn.com";
   const mail = (subject, body) => "mailto:" + TO + "?cc=" + encodeURIComponent(CC) + "&subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-  const fields = "\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\n\nMerci !";
-  document.querySelectorAll('a[href="#contact"]').forEach(a => { a.href = mail("Échange de cadrage Cap 90", "Bonjour Shirley et Coralie,\n\nJe souhaite planifier un échange de cadrage de 30 minutes." + fields); });
-  document.getElementById("send-kw").href = mail("PAS DE RUPTURE", "Bonjour Shirley et Coralie,\n\nPAS DE RUPTURE : nous préparons l'arrivée d'un profil clé et souhaitons en parler 30 minutes." + fields);
-  document.getElementById("send-sos").href = mail("SOS PÉRIODE D'ESSAI", "Bonjour Shirley et Coralie,\n\nSOS PÉRIODE D'ESSAI : une personne recrutée est en période d'essai et la situation nous inquiète." + fields);
-
-  const boxes = [...document.querySelectorAll(".match input")];
-  const bar = document.getElementById("meter-bar"), res = document.getElementById("match-result"), card = document.getElementById("cta-main");
-  const msgs = ["Cochez ce qui vous ressemble.", "33 % · Ça commence bien.", "66 % · Il y a clairement quelque chose entre nous.", "100 % · Match parfait. On se parle ?"];
-  const update = () => { const n = boxes.filter(b => b.checked).length; bar.style.width = (n === 3 ? 100 : n * 33) + "%"; bar.classList.toggle("full", n === 3); res.textContent = msgs[n]; card.classList.toggle("ready", n === 3); };
-  boxes.forEach(b => b.addEventListener("change", update)); update();
-
+  const MAILS = {
+    alerte: mail("Période d'essai à clarifier", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate d'arrivée :\nProblème observé :\nUrgence éventuelle :\n"),
+    prevention: mail("Préparer une prise de poste", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\nCe que vous voulez préparer :\n")
+  };
+  document.querySelectorAll("[data-mail]").forEach(a => { a.href = MAILS[a.dataset.mail]; });
 </script>
 
 </body>
