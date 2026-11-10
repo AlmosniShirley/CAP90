@@ -520,6 +520,17 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
   .prev-track .step.cont::before { display: block; }
 }
 
+/* Prevention: Alerte-style blocks */
+.prev-sub { margin: clamp(44px, 6vw, 64px) 0 20px; display: grid; gap: 10px; max-width: 760px; }
+.prev-sub .sub-h { margin: 0; }
+.deliv.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.prev-note { margin-top: 16px; font-size: 15px; color: var(--muted); }
+.prevention .card, .prevention .frame, .prevention .deliv li { background: var(--bg); }
+.prevention .card { gap: 14px; }
+.prev-limits { margin-top: clamp(44px, 6vw, 64px); margin-bottom: 28px; }
+@media (max-width: 860px) { .deliv.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .deliv.three { grid-template-columns: 1fr; } }
+
 /* Contact */
 .mail-help { font-size: 14px; color: var(--muted); line-height: 1.45; }
 .cta-actions .btn-ghost { justify-content: center; }
@@ -767,32 +778,45 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
             <p class="livrable"><b>Livrable&nbsp;:</b> Un bilan de prise de poste et une feuille de route pour les prochains mois.</p></li>
         </ol>
       </div>
-      <div class="relais-block relais-two">
-        <div class="conf-text">
-          <h3>Un espace de confiance pour la personne recrutée</h3>
-          <p>La personne dispose d'un espace externe et confidentiel pour prendre du recul sur ce qu'elle vit pendant ses premières semaines&nbsp;:</p>
-          <ul class="brief-list"><li>Compréhension du poste</li><li>Relation avec le manager</li><li>Priorités</li><li>Charge de travail</li><li>Fonctionnement de l'équipe</li><li>Écarts entre la promesse et la réalité</li><li>Difficultés qu'elle n'ose pas encore formuler en interne</li></ul>
-          <p>Nous ne transmettons pas de verbatim. Nous faisons remonter les tendances, les risques et les sujets nécessitant une action, selon les règles définies au démarrage.</p>
-          <p>L'objectif n'est pas de contourner le manager. C'est de permettre aux sujets importants d'être formulés assez tôt pour pouvoir être traités.</p>
+      <div class="prev-sub">
+        <span class="eyebrow">Ce que l'entreprise reçoit</span>
+        <h3 class="sub-h">Des livrables à chaque étape</h3>
+        <p class="card-intro">Selon le périmètre choisi&nbsp;:</p>
+      </div>
+      <ul class="deliv three"><li>Une synthèse d'audit du poste</li><li>Une feuille de route des 30, 60 et 90 premiers jours</li><li>Une checklist opérationnelle d'arrivée</li><li>Une cartographie des interlocuteurs et interfaces</li><li>Des points de situation à J15, J30, J60 et J90</li><li>Une synthèse des écarts entre attentes et réalité</li><li>Des recommandations d'ajustement</li><li>Un bilan de prise de poste</li><li>Une feuille de route pour la suite</li></ul>
+      <p class="prev-note">Pas de checklist décorative&nbsp;: chaque point doit permettre une action, un arbitrage ou une décision.</p>
+
+      <div class="prev-sub">
+        <span class="eyebrow">Espace de confiance</span>
+        <h3 class="sub-h">Un espace de confiance pour la personne recrutée</h3>
+        <p class="card-intro">Un espace externe et confidentiel pour prendre du recul sur ce qu'elle vit pendant ses premières semaines.</p>
+      </div>
+      <div class="conf-grid">
+        <div class="card">
+          <h3>Ce dont la personne peut parler</h3>
+          <ul class="checks"><li>La compréhension du poste</li><li>La relation avec le manager</li><li>Les priorités et la charge de travail</li><li>Le fonctionnement de l'équipe</li><li>Les écarts entre la promesse et la réalité</li><li>Les difficultés qu'elle n'ose pas encore formuler en interne</li></ul>
         </div>
-        <div class="conf-text">
-          <h3>Ce que l'entreprise reçoit</h3>
-          <p>Selon le périmètre choisi&nbsp;:</p>
-          <ul class="brief-list one-col"><li>Une synthèse d'audit du poste</li><li>Une feuille de route des 30, 60 et 90 premiers jours</li><li>Une checklist opérationnelle d'arrivée</li><li>Une cartographie des interlocuteurs et interfaces</li><li>Des points de situation à J15, J30, J60 et J90</li><li>Une synthèse des écarts entre attentes et réalité</li><li>Des recommandations d'ajustement</li><li>Un bilan de prise de poste</li><li>Une feuille de route pour la suite</li></ul>
-          <p>Pas de checklist décorative&nbsp;: chaque point doit permettre une action, un arbitrage ou une décision.</p>
+        <div class="card">
+          <h3>Ce qui remonte à l'entreprise</h3>
+          <ul class="checks"><li>Les tendances</li><li>Les risques</li><li>Les sujets nécessitant une action</li></ul>
+          <ul class="nots"><li>Pas de verbatim</li></ul>
+          <p class="card-intro">Selon les règles définies au démarrage.</p>
+          <p class="role">L'objectif n'est pas de contourner le manager. C'est de permettre aux sujets importants d'être formulés assez tôt pour pouvoir être traités.</p>
         </div>
       </div>
-      <div class="relais-block relais-two">
-        <div class="format-box">
-          <h3>Format</h3>
-          <p>CAP90 Prévention est un forfait de 90 jours à compter de la préparation de l'arrivée. Il comprend&nbsp;:</p>
-          <ul class="brief-list one-col"><li>Un cadrage initial avec l'entreprise</li><li>Un audit du poste</li><li>Une préparation de l'arrivée</li><li>Des points de suivi à J15, J30, J60 et J90</li><li>Des échanges confidentiels avec la personne recrutée</li><li>Des alertes sur les sujets nécessitant un arbitrage</li><li>Un bilan final</li></ul>
-          <p>Le nombre d'entretiens, les interlocuteurs concernés, les livrables et le prix sont définis avant le démarrage. Pas de tarif horaire.</p>
-        </div>
-        <div class="conf-text">
-          <h3>Ce que CAP90 Prévention ne fait pas</h3>
+
+      <div class="limits-grid prev-limits">
+        <div class="card">
+          <span class="eyebrow">Ce que CAP90 Prévention ne fait pas</span>
           <ul class="nots"><li>Nous ne prenons pas la place du manager.</li><li>Nous ne remplaçons pas la RH.</li><li>Nous ne décidons pas des objectifs à la place de l'entreprise.</li><li>Nous ne pouvons pas compenser un poste mal conçu ou des moyens inexistants.</li><li>Nous ne garantissons pas que la personne restera dans l'entreprise.</li><li>Nous ne transmettons pas automatiquement les propos individuels.</li><li>Nous ne transformons pas les points de suivi en reporting permanent sur la personne recrutée.</li></ul>
           <p class="role">L'entreprise reste responsable de ses décisions, de son management et des moyens donnés à la personne pour réussir.</p>
+        </div>
+        <div class="frame">
+          <span class="eyebrow">Format</span>
+          <h2 class="frame-title">Un forfait de 90 jours</h2>
+          <p class="card-intro">À compter de la préparation de l'arrivée.</p>
+          <ul class="checks"><li>Un cadrage initial avec l'entreprise</li><li>Un audit du poste</li><li>Une préparation de l'arrivée</li><li>Des points de suivi à J15, J30, J60 et J90</li><li>Des échanges confidentiels avec la personne recrutée</li><li>Des alertes sur les sujets nécessitant un arbitrage</li><li>Un bilan final</li></ul>
+          <p class="card-intro">Le nombre d'entretiens, les interlocuteurs concernés, les livrables et le prix sont définis avant le démarrage. Pas de tarif horaire.</p>
         </div>
       </div>
       <a class="btn btn-ghost prev-cta" data-mail="prevention" href="#contact">Préparer l'arrivée d'un profil clé <span class="arrow" aria-hidden="true">→</span></a>
