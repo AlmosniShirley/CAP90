@@ -557,7 +557,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
       <a href="#prevention">Prévention</a>
       <a href="#nous">Qui sommes-nous</a>
     </nav>
-    <a class="btn btn-primary" data-mail="alerte" href="#contact"><span>Analyser<span class="hide-sm"> une situation</span></span></a>
+    <a class="btn btn-primary" data-mail="alerte" href="#contact"><span>Parler d'une situation<span class="hide-sm"> concrète</span></span></a>
   </div>
 </header>
 
@@ -569,7 +569,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
         <h1>Un recrutement clé est en train de se défaire&nbsp;? <em>Comprenez ce qui bloque</em> avant de décider quoi faire.</h1>
         <p class="lede">Dès les premiers signaux de désengagement, de tension ou de décalage, nous croisons le point de vue de l'entreprise et celui de la personne concernée. En 7 à 10 jours, nous identifions ce qui relève du poste, du management, de l'organisation ou de la relation, puis nous vous aidons à décider&nbsp;: réparer, recadrer, réorganiser ou préparer le départ.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" data-mail="alerte" href="#contact">Analyser une situation <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" data-mail="alerte" href="#contact">Clarifier ce qui bloque <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#prevention">Découvrir l'accompagnement préventif</a>
         </div>
       </div>
@@ -960,7 +960,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
           <div class="cta-meta"><span>30 minutes</span><span>Sans engagement</span><span>Confidentialité posée dès le premier échange</span></div>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" data-mail="alerte" href="#contact">Analyser une situation <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" data-mail="alerte" href="#contact">Échanger sur la situation <span class="arrow" aria-hidden="true">→</span></a>
           <p class="mail-help">Un e-mail s'ouvre avec six questions&nbsp;: entreprise, poste concerné, date d'arrivée, situation observée, départ envisagé ou non, urgence éventuelle.</p>
           <a class="btn btn-ghost" data-mail="prevention" href="#contact">Préparer une prise de poste</a>
         </div>
@@ -993,7 +993,7 @@ section[id], .anchor-alias { scroll-margin-top: 72px; }
   const TO = "shirley.chiche@buildrh.co", CC = "coralie@ellipse.cn.com";
   const mail = (subject, body) => "mailto:" + TO + "?cc=" + encodeURIComponent(CC) + "&subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   const MAILS = {
-    alerte: mail("Situation de prise de poste à clarifier", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate d'arrivée :\nSituation ou signaux observés :\nDépart envisagé ou non :\nUrgence éventuelle :\n"),
+    alerte: mail("Une prise de poste à clarifier", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate d'arrivée :\nSituation ou signaux observés :\nDépart envisagé ou non :\nUrgence éventuelle :\n"),
     relais: mail("Échange sur CAP90 Relais", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste concerné :\nDate de prise de poste :\nDurée souhaitée :\nRaison de la demande :\nPersonne qui serait accompagnée :\nInterlocuteur côté entreprise :\n"),
     prevention: mail("Préparer l'arrivée d'un profil clé", "Bonjour Shirley et Coralie,\n\nEntreprise :\nPoste recruté :\nDate d'arrivée prévue :\nNombre de personnes impliquées :\nPrincipales préoccupations :\nInterlocuteur côté entreprise :\n")
   };
